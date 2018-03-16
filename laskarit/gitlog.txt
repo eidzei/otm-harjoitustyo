@@ -1,0 +1,131 @@
+commit 0f2bce15a5d2b059a807d7557e5c1e9944508a58
+Author: Antti-Jussi <eidzey@gmail.com>
+Date:   Fri Mar 16 17:01:46 2018 +0200
+
+    muokattu 3
+
+ tiedostoja/file3.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 6e6edafd59d525d7301f5fc406ff9ef8333f728d
+Author: Antti-Jussi <eidzey@gmail.com>
+Date:   Fri Mar 16 17:01:05 2018 +0200
+
+    poistettu 1 ja muutettu 2 22
+
+ tiedostoja/file2.txt                 | 0
+ tiedostoja/{file1.txt => file22.txt} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 3f28906efd3db479329ef66997f9f3f7a08d4702
+Author: Antti-Jussi <eidzey@gmail.com>
+Date:   Fri Mar 16 16:56:21 2018 +0200
+
+    luotiin tietostoja
+
+ tiedostoja/file1.txt | 0
+ tiedostoja/file2.txt | 0
+ tiedostoja/file3.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 55280f206a77d30c213223c439e05e0f233b57d6
+Author: Antti-Jussi <eidzey@gmail.com>
+Date:   Fri Mar 16 16:39:52 2018 +0200
+
+    muokattu ekaa ja kolmatta
+
+ eka.txt    | 136 ++++++++++++++++++++++++++++++-------------------------------
+ kolmas.txt |   2 +-
+ 2 files changed, 69 insertions(+), 69 deletions(-)
+
+commit 88c3eaf6a345f6980b85c0fbd54a8a91aeb4d194
+Author: Antti-Jussi <eidzey@gmail.com>
+Date:   Fri Mar 16 16:26:15 2018 +0200
+
+    tiedosto poistettu
+
+ tiedosto.txt | 68 ------------------------------------------------------------
+ 1 file changed, 68 deletions(-)
+
+commit 0d719b3abeee182859eb606218bc9c7081db27c8
+Author: Antti-Jussi <eidzey@gmail.com>
+Date:   Fri Mar 16 16:25:42 2018 +0200
+
+    tiedosto nimi vaihdettu
+
+ eka.txt | 68 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 68 insertions(+)
+
+commit 86149650a41feb2e64d37f56e27a0fd0eca7552e
+Author: Antti-Jussi <eidzey@gmail.com>
+Date:   Fri Mar 16 16:23:11 2018 +0200
+
+    toinen poistettu
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit b623d30984cd1d222f40e64658e0b11e05be7792
+Author: Antti-Jussi <eidzey@gmail.com>
+Date:   Fri Mar 16 16:12:39 2018 +0200
+
+    muokattu tekstin loppua
+
+ tiedosto.txt | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+commit af414082ec439cd40c595f98bd0ee733e5900170
+Author: Antti-Jussi <eidzey@gmail.com>
+Date:   Fri Mar 16 16:11:10 2018 +0200
+
+    paljon tekstiä lisätty
+
+ tiedosto.txt | 69 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 69 insertions(+)
+
+commit caf190aa7d8e605b21bfb23e253ef3755243c982
+Author: Antti-Jussi <eidzey@gmail.com>
+Date:   Fri Mar 16 15:41:06 2018 +0200
+
+    stuff lisätty
+
+ stuff/salatiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 82db2affc3ea37c8f0901e932e39e0f02779e549
+Author: Antti-Jussi <eidzey@gmail.com>
+Date:   Fri Mar 16 15:39:17 2018 +0200
+
+    muutoksia toiseen ja kolmanteen
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit ddf31e099f6429818d0dc6c1b11eaa61b4710eaa
+Author: Antti-Jussi <eidzey@gmail.com>
+Date:   Fri Mar 16 15:37:20 2018 +0200
+
+    kolmas lisätty
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit c21aeb84749e1d5cee77f9013cf7fb74b97417b8
+Author: Antti-Jussi <eidzey@gmail.com>
+Date:   Fri Mar 16 15:23:03 2018 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit d7a7b7797945f49cc9291ee631265ed5445576a4
+Author: Antti-Jussi <eidzey@gmail.com>
+Date:   Fri Mar 16 15:12:19 2018 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
