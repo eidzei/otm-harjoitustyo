@@ -16,7 +16,7 @@ import static org.junit.Assert.*;
  * @author eidzey
  */
 public class MaksukorttiTest {
-    
+    //alkupalat
     Maksukortti kortti;
     
     @Before
