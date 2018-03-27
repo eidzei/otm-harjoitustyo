@@ -1,5 +1,5 @@
 # OTM-harjoitustyö
-
+[vaatimusmaarittely.md](https://github.com/eidzei/otm-harjoitustyo/blob/master/dokumentointi/vaatimusmaarittely.md)
 
 ## Tehtävät
 ### Viikko1
