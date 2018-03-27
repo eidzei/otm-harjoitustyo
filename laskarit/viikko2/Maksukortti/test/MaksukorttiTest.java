@@ -100,8 +100,6 @@ public class MaksukorttiTest {
         kortti.syoMaukkaasti();
         kortti.syoMaukkaasti();
         //kortilla rahaa 4.0 euroa
-        kortti.syoMaukkaasti();
-        kortti.syoMaukkaasti();
         
         assertEquals("Kortilla on rahaa 0.0 euroa", kortti.toString());
     }
