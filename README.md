@@ -12,6 +12,17 @@ laskutoimitukseia.
 ## Komentorivitoiminnot
 
 ### Testaus
-Testit suoritetaan komenolla 
-Testikattavuusraportti luodaan komennolla 
+Testit suoritetaan komenolla
+
+```
+mvn test
+```
+ 
+Testikattavuusraportti luodaan komennolla
+
+```
+mvn jacoco:report
+```
+ 
 Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto 
+_target/site/jacoco/index.html_
