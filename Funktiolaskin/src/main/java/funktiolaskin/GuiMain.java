@@ -15,7 +15,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.Scene;
 
 
-public class Funktiolaskin extends Application {
+public class GuiMain extends Application {
     //mikä operaatio valittu
     static Operaattori operaattoriNyt;
     //onko operaatio valittu
@@ -27,7 +27,7 @@ public class Funktiolaskin extends Application {
     private TextField naytto;
     
     @Override
-    public void start(Stage stage) {
+    public void start(Stage ikkuna) {
         //Luodaan Layout ja sommitellaan asettelu
         BorderPane layout = new BorderPane();
         
@@ -41,11 +41,11 @@ public class Funktiolaskin extends Application {
         
         Scene scene = new Scene(layout);
         
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.sizeToScene();
-        stage.setTitle("Funktiolaskin");
-        stage.show();
+        ikkuna.setScene(scene);
+        ikkuna.setResizable(false);
+        ikkuna.sizeToScene();
+        ikkuna.setTitle("Funktiolaskin");
+        ikkuna.show();
        
         
     }

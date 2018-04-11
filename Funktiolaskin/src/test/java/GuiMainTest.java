@@ -15,9 +15,9 @@ import static org.junit.Assert.*;
  *
  * @author eidzey
  */
-public class FuntiolaskinTest {
+public class GuiMainTest {
     
-    public FuntiolaskinTest() {
+    public GuiMainTest() {
     }
     
     @BeforeClass
