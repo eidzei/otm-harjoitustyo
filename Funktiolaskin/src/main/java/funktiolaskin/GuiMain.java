@@ -2,8 +2,6 @@
 package funktiolaskin;
 
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
@@ -19,6 +17,8 @@ import javafx.scene.Scene;
 public class GuiMain extends Application {
     //mikä operaatio valittu
     static Operaattori operaattoriNyt;
+    //mikä funtio valittu
+    static Funktiot funktioNyt; 
     //onko operaatio valittu
     static boolean valittuOperaattori;
     //onko tulos naytetty
@@ -27,8 +27,10 @@ public class GuiMain extends Application {
     private VBox tulosTaulu;
     private TextField apuNaytto;
     private TextField naytto;
+    private static Funktiolaskin laskin;
     
     public static void main(String[] args) {
+        laskin = new Funktiolaskin();
         launch(args);
     }
     
@@ -62,7 +64,11 @@ public class GuiMain extends Application {
         funktioLayout.setHgap(5);
         funktioLayout.setVgap(5);
         
-        //
+        //for(Funktiot funk: Funktiot.values()){
+        //    String symboli = funk.toString();
+            
+            
+        //}
         Button squered= new Button("x^2");
         squered.setMinSize(100, 100);
         squered.setStyle("-fx-color: gray");
@@ -111,6 +117,9 @@ public class GuiMain extends Application {
         Button pi= new Button("pi");
         pi.setMinSize(100, 100);
         pi.setStyle("-fx-color: gray");
+        pi.setOnAction(e ->{
+            
+        });
         funktioLayout.add(pi, 1, 4);
         
         return funktioLayout;
@@ -118,7 +127,7 @@ public class GuiMain extends Application {
     
     //nayton asettelu
     public VBox naytto(){
-        //näyttää edellisen tuloksen
+        //näyttää ennen operaatiota tai funktiota kirjoitetun tuloksen
         apuNaytto = new TextField();
         apuNaytto.setStyle("-fx-font-size: 15; -fx-text-fill: gray");
         apuNaytto.setMaxWidth(815);
@@ -208,7 +217,7 @@ public class GuiMain extends Application {
             nappi.setStyle("-fx-color: orange");
             nappi.setOnAction(e ->{
                 if(apuNaytto.getText().isEmpty()){
-                    apuNaytto.setText(naytto.getText().isEmpty() ? "0": selvitaArvo(naytto.getText()));
+                    apuNaytto.setText(naytto.getText().isEmpty() ? "0": laskin.selvitaArvo(naytto.getText()));
                     apuNaytto.appendText(" " + symboli);
                     operaattoriNyt = op;
                     tulosNaytetty = true;
@@ -221,7 +230,7 @@ public class GuiMain extends Application {
                     
                 }
                 else{
-                    apuNaytto.setText(laske(operaattoriNyt, naytto, apuNaytto) + " " + symboli);
+                    apuNaytto.setText(laskin.laskeOperaatio(operaattoriNyt, naytto, apuNaytto) + " " + symboli);
                     naytto.clear();
                     operaattoriNyt = op;
                     tulosNaytetty = true;
@@ -231,12 +240,13 @@ public class GuiMain extends Application {
             nappiLayout.addColumn(3, nappi);
         }
         
+        //on yhta kuin nappi
         Button onYhtaKuin = new Button("=");
         onYhtaKuin.setStyle("-fx-color: orange");
         onYhtaKuin.setMinSize(100, 100);
         onYhtaKuin.setOnAction(e->{
             if(!apuNaytto.getText().isEmpty()){
-                naytto.setText(laske(operaattoriNyt, naytto, apuNaytto));
+                naytto.setText(laskin.laskeOperaatio(operaattoriNyt, naytto, apuNaytto));
                 tulosNaytetty = true;
                 valittuOperaattori = false;
                 apuNaytto.clear();
@@ -248,37 +258,6 @@ public class GuiMain extends Application {
 
         return nappiLayout;
     }
-    
-    //
-    private static String selvitaArvo(String arvo){
-        double tulos = Double.parseDouble(arvo);
-        return toFunktiolaskinString(tulos);
-    }
-    
-    //
-    private static String toFunktiolaskinString(double input) {
-        return input == (int)input ? 
-            Integer.toString((int)input) : poistaDesimaaliaSeuraavatNollat(String.format("%.6f", input));
-    }
-    
-    //
-    private static String poistaDesimaaliaSeuraavatNollat(String s) {
-        return !s.contains(".") ? s : s.replaceAll("0*$", "").replaceAll("\\.$", "");
-    }
-    
-    //
-    private static String laske(Operaattori op, TextField main, TextField apu) {
-        double arvo1 = Double.parseDouble(apu.getText().replaceAll("[^\\.0-9]", ""));
-        double arvo2 = Double.parseDouble(main.getText());
-
-        if (arvo2 == 0 && op == Operaattori.JAKO) {
-            return "Nollalla ei voi jakaa";
-        }
-
-        double tulos = op.laske(arvo1, arvo2);
-        return toFunktiolaskinString(tulos);
-    }
-
     
 }    
     
