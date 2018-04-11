@@ -8,6 +8,8 @@ public enum Operaattori {
     KERTO("x", (x, y) -> x * y),
     VAHENNYS("-", (x, y) -> x - y),
     LISAYS("+", (x, y) -> x + y);
+    
+    
     private final String symboli;
     private final DoubleBinaryOperator lasku;
 

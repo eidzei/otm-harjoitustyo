@@ -8,6 +8,7 @@ import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.application.Application;
+import static javafx.application.Application.launch;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -23,21 +24,26 @@ public class GuiMain extends Application {
     //onko tulos naytetty
     static boolean tulosNaytetty;
     
+    private VBox tulosTaulu;
     private TextField apuNaytto;
     private TextField naytto;
+    
+    public static void main(String[] args) {
+        launch(args);
+    }
     
     @Override
     public void start(Stage ikkuna) {
         //Luodaan Layout ja sommitellaan asettelu
         BorderPane layout = new BorderPane();
         
-        VBox tulosTaulu = naytto();
+        tulosTaulu = naytto();
         
         layout.setTop(tulosTaulu);
         
-        layout.setRight(numeroNapit(tulosTaulu));
+        layout.setRight(numeroNapit());
         
-        layout.setLeft(funktioNapit(tulosTaulu));
+        layout.setLeft(funktioNapit());
         
         Scene scene = new Scene(layout);
         
@@ -50,52 +56,62 @@ public class GuiMain extends Application {
         
     }
     //Luodaan funktionappaimet, toiminnot lisataan myohemmin
-    public GridPane funktioNapit(VBox tulos){
+    public GridPane funktioNapit(){
         GridPane funktioLayout = new GridPane();
-        funktioLayout.setPadding(new Insets(10,0,0,0));
+        funktioLayout.setPadding(new Insets(10,10,0,0));
         funktioLayout.setHgap(5);
-        funktioLayout.setVgap(2);
+        funktioLayout.setVgap(5);
         
         //
         Button squered= new Button("x^2");
         squered.setMinSize(100, 100);
+        squered.setStyle("-fx-color: gray");
         funktioLayout.add(squered, 0, 0);
         
         Button cubed= new Button("x^3");
-        squered.setMinSize(100, 100);
-        funktioLayout.add(squered, 1, 0);
+        cubed.setMinSize(100, 100);
+        cubed.setStyle("-fx-color: gray");
+        funktioLayout.add(cubed, 1, 0);
         
         Button onePerX= new Button("1/x");
-        squered.setMinSize(100, 100);
-        funktioLayout.add(squered, 0, 1);
+        onePerX.setMinSize(100, 100);
+        onePerX.setStyle("-fx-color: gray");
+        funktioLayout.add(onePerX, 0, 1);
         
         Button sqrt= new Button("sqrt");
-        squered.setMinSize(100, 100);
-        funktioLayout.add(squered, 1, 1);
+        sqrt.setMinSize(100, 100);
+        sqrt.setStyle("-fx-color: gray");
+        funktioLayout.add(sqrt, 1, 1);
         
         Button lnx= new Button("ln x");
-        squered.setMinSize(100, 100);
-        funktioLayout.add(squered, 0, 2);
+        lnx.setMinSize(100, 100);
+        lnx.setStyle("-fx-color: gray");
+        funktioLayout.add(lnx, 0, 2);
         
         Button logTen= new Button("log 10");
-        squered.setMinSize(100, 100);
-        funktioLayout.add(squered, 1, 2);
+        logTen.setMinSize(100, 100);
+        logTen.setStyle("-fx-color: gray");
+        funktioLayout.add(logTen, 1, 2);
         
         Button sin= new Button("sin");
-        squered.setMinSize(100, 100);
-        funktioLayout.add(squered, 0, 3);
+        sin.setMinSize(100, 100);
+        sin.setStyle("-fx-color: gray");
+        funktioLayout.add(sin, 0, 3);
         
         Button cos= new Button("cos");
-        squered.setMinSize(100, 100);
-        funktioLayout.add(squered, 1, 3);
+        cos.setMinSize(100, 100);
+        cos.setStyle("-fx-color: gray");
+        funktioLayout.add(cos, 1, 3);
         
         Button tan= new Button("tan");
-        squered.setMinSize(100, 100);
-        funktioLayout.add(squered, 0, 4);
+        tan.setMinSize(100, 100);
+        tan.setStyle("-fx-color: gray");
+        funktioLayout.add(tan, 0, 4);
         
         Button pi= new Button("pi");
-        squered.setMinSize(100, 100);
-        funktioLayout.add(squered, 1, 4);
+        pi.setMinSize(100, 100);
+        pi.setStyle("-fx-color: gray");
+        funktioLayout.add(pi, 1, 4);
         
         return funktioLayout;
     }
@@ -105,13 +121,13 @@ public class GuiMain extends Application {
         //näyttää edellisen tuloksen
         apuNaytto = new TextField();
         apuNaytto.setStyle("-fx-font-size: 15; -fx-text-fill: gray");
-        apuNaytto.setMaxWidth(615);
+        apuNaytto.setMaxWidth(815);
         apuNaytto.setEditable(false);
         
         //tähän kirjoitetaan
         naytto = new TextField();
         naytto.setStyle("-fx-font-size: 40");
-        naytto.setMaxWidth(615);
+        naytto.setMaxWidth(815);
         naytto.setEditable(false);
         
         //asettelu
@@ -122,7 +138,7 @@ public class GuiMain extends Application {
     }
     
     //numeronappaimisto
-    public GridPane numeroNapit(VBox tulos){
+    public GridPane numeroNapit(){
         GridPane nappiLayout = new GridPane();
         nappiLayout.setPadding(new Insets(10,0,0,0));
         nappiLayout.setHgap(5);
@@ -131,12 +147,23 @@ public class GuiMain extends Application {
         //clear
         Button clear = new Button("clear");
         clear.setMinSize(200, 100);
+        clear.setOnAction(e -> {
+            naytto.clear();
+            apuNaytto.clear();
+            valittuOperaattori = false;
+        });
         GridPane.setColumnSpan(clear, 2);
         nappiLayout.add(clear, 0, 0);
         
         //backspace
         Button takaisin = new Button("\u2190");
         takaisin.setMinSize(100, 100);
+        takaisin.setOnAction(e-> {
+           String teksti = naytto.getText();
+           if (!teksti.isEmpty() && !tulosNaytetty){
+               naytto.setText(teksti.substring(0, teksti.length()-1));
+           }
+        });
         nappiLayout.add(takaisin, 2, 0);
         
         //luodaan numeronapit
@@ -201,10 +228,24 @@ public class GuiMain extends Application {
                     valittuOperaattori = true;
                 }
             });
+            nappiLayout.addColumn(3, nappi);
         }
+        
+        Button onYhtaKuin = new Button("=");
+        onYhtaKuin.setStyle("-fx-color: orange");
+        onYhtaKuin.setMinSize(100, 100);
+        onYhtaKuin.setOnAction(e->{
+            if(!apuNaytto.getText().isEmpty()){
+                naytto.setText(laske(operaattoriNyt, naytto, apuNaytto));
+                tulosNaytetty = true;
+                valittuOperaattori = false;
+                apuNaytto.clear();
+            }
+            
+        });
+        nappiLayout.addColumn(3, onYhtaKuin);
+        onYhtaKuin.setDefaultButton(true);
 
-        
-        
         return nappiLayout;
     }
     
@@ -239,10 +280,6 @@ public class GuiMain extends Application {
     }
 
     
-
-   
-    public static void main(String[] args) {
-        launch(args);
-    }
+}    
     
-}
+
