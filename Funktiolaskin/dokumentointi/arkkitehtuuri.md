@@ -8,4 +8,6 @@ Ohjelman rakenne noudattaa kaksitasoista kerrosarkitehtuuria, ohjelman pakkausra
 Pakkaus _funktiolaskin.ui_ sisältää JavaFX:llä toteutetun käyttöliittymän ja _funktiolaskin.laskin_ sisältää sovelluslogiikan.
 ## Sovelluslogiikka
 
+<img src="https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/dokumentointi/kuvat/sovelluslogiikka.png" width="350">
+
 ## Käyttöliittymä
