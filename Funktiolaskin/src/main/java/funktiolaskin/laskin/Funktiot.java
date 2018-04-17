@@ -1,4 +1,4 @@
-package funktiolaskin;
+package funktiolaskin.laskin;
 
 import java.util.function.DoubleFunction;
 import java.lang.Math;

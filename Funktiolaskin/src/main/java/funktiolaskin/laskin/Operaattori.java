@@ -1,11 +1,11 @@
-package funktiolaskin;
+package funktiolaskin.laskin;
 
 import java.util.function.DoubleBinaryOperator;
 
 
 public enum Operaattori {
     JAKO("\u00F7", (x, y) -> x / y),
-    KERTO("x", (x, y) -> x * y),
+    KERTO("*", (x, y) -> x * y),
     VAHENNYS("-", (x, y) -> x - y),
     LISAYS("+", (x, y) -> x + y);
     

@@ -1,7 +1,10 @@
 
-package funktiolaskin;
+package funktiolaskin.ui;
 
 
+import funktiolaskin.laskin.Funktiolaskin;
+import funktiolaskin.laskin.Funktiot;
+import funktiolaskin.laskin.Operaattori;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;

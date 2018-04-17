@@ -1,5 +1,5 @@
 
-package funktiolaskin;
+package funktiolaskin.laskin;
 
 import javafx.scene.control.TextField;
 
