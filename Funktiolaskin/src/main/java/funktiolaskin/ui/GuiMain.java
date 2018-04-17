@@ -60,6 +60,7 @@ public class GuiMain extends Application {
        
         
     }
+    
     //Luodaan funktionappaimet, toiminnot lisataan myohemmin
     public GridPane funktioNapit() {
         GridPane funktioLayout = new GridPane();
@@ -67,61 +68,40 @@ public class GuiMain extends Application {
         funktioLayout.setHgap(5);
         funktioLayout.setVgap(5);
         
-        //for(Funktiot funk: Funktiot.values()){
-        //    String symboli = funk.toString();
+        int column = 0;
+        int row=0;
+        for(Funktiot funk: Funktiot.values()){
+            if (row == 2){
+                row =0;
+                column++;
+            }
+            String symboli = funk.toString();
+            Button funkNappi = new Button(symboli);
+            funkNappi.setMinSize(100, 100);
+            funkNappi.setStyle("-fx-color: gray");
+            funkNappi.setOnAction(e-> {
+               if (apuNaytto.getText().isEmpty() && !naytto.getText().isEmpty()){
+                   funktioNyt = funk;
+                   naytto.setText(laskin.laskeFunktio(funktioNyt, naytto));
+               }
+            });
+            funktioLayout.add(funkNappi, row, column); 
+            row++;
+            }
             
-            
-        //}
-        Button squered = new Button("x^2");
-        squered.setMinSize(100, 100);
-        squered.setStyle("-fx-color: gray");
-        funktioLayout.add(squered, 0, 0);
-        
-        Button cubed = new Button("x^3");
-        cubed.setMinSize(100, 100);
-        cubed.setStyle("-fx-color: gray");
-        funktioLayout.add(cubed, 1, 0);
-        
-        Button onePerX = new Button("1/x");
-        onePerX.setMinSize(100, 100);
-        onePerX.setStyle("-fx-color: gray");
-        funktioLayout.add(onePerX, 0, 1);
-        
-        Button sqrt = new Button("sqrt");
-        sqrt.setMinSize(100, 100);
-        sqrt.setStyle("-fx-color: gray");
-        funktioLayout.add(sqrt, 1, 1);
-        
-        Button lnx = new Button("ln x");
-        lnx.setMinSize(100, 100);
-        lnx.setStyle("-fx-color: gray");
-        funktioLayout.add(lnx, 0, 2);
-        
-        Button logTen = new Button("log 10");
-        logTen.setMinSize(100, 100);
-        logTen.setStyle("-fx-color: gray");
-        funktioLayout.add(logTen, 1, 2);
-        
-        Button sin = new Button("sin");
-        sin.setMinSize(100, 100);
-        sin.setStyle("-fx-color: gray");
-        funktioLayout.add(sin, 0, 3);
-        
-        Button cos = new Button("cos");
-        cos.setMinSize(100, 100);
-        cos.setStyle("-fx-color: gray");
-        funktioLayout.add(cos, 1, 3);
-        
-        Button tan = new Button("tan");
-        tan.setMinSize(100, 100);
-        tan.setStyle("-fx-color: gray");
-        funktioLayout.add(tan, 0, 4);
-        
+        //pi nappi
         Button pi = new Button("pi");
         pi.setMinSize(100, 100);
         pi.setStyle("-fx-color: gray");
         pi.setOnAction(e -> {
+            if(naytto.getText().isEmpty()){
+                naytto.setText(String.valueOf(Math.PI));
+                tulosNaytetty = false;
+            } else{
+                naytto.setText(String.valueOf(Math.PI));
+            }
             
+            valittuOperaattori = false;
         });
         funktioLayout.add(pi, 1, 4);
         
@@ -208,6 +188,12 @@ public class GuiMain extends Application {
         //desimaalipiste
         Button desimaali = new Button(".");
         desimaali.setMinSize(100, 100);
+        desimaali.setOnAction(e-> {
+            if(!naytto.getText().isEmpty()){
+                naytto.appendText(".");
+                valittuOperaattori = false;
+            }
+        });
         nappiLayout.add(desimaali, 2, 4);
         
         //operaationapit
