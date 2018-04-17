@@ -4,10 +4,10 @@ tarkoituksena on laskea yksinkertaisia funktioita ja muita
 laskutoimitukseia.
 
 ## Dokumentaatio
-∂
+
 [vaatimusmaarittely.md](https://github.com/eidzei/otm-harjoitustyo/blob/master/dokumentointi/vaatimusmaarittely.md)
 
-[Ty√∂aikakirjanpito.md](https://github.com/eidzei/otm-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.md)
+[Tyoaikakirjanpito.md](https://github.com/eidzei/otm-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.md)
 
 ## Komentorivitoiminnot
 
