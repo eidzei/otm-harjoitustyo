@@ -5,11 +5,11 @@ laskutoimitukseia.
 
 ## Dokumentaatio
 
-[Vaatimusmäärittely](https://github.com/eidzei/otm-harjoitustyo/blob/master/dokumentointi/vaatimusmaarittely.md)
+[Vaatimusmäärittely](https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/dokumentointi/vaatimusmaarittely.md)
 
-[Arkkitehtuurikuvaus](https://github.com/eidzei/otm-harjoitustyo/blob/master/dokumentointi/arkkitehtuuri.md)
+[Arkkitehtuurikuvaus](https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/dokumentointi/arkkitehtuuri.md)
 
-[Työaikakirjanpito](https://github.com/eidzei/otm-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.md)
+[Työaikakirjanpito](https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/dokumentointi/tyoaikakirjanpito.md)
 
 ## Komentorivitoiminnot
 
