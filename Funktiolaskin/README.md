@@ -29,7 +29,7 @@ _target/site/jacoco/index.html_
 
 ### Checkstyle
 
-Tiedostoon [checkstyle.xml]() määrittelemät tarkistukset suoritetaan komennolla
+Tiedostoon [checkstyle.xml](https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/checkstyle.xml) määrittelemät tarkistukset suoritetaan komennolla
 
 ```
  mvn jxr:jxr checkstyle:checkstyle
