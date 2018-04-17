@@ -6,15 +6,15 @@ import javafx.scene.control.TextField;
 
 public class Funktiolaskin {
    //Selsvittää stringin arvon
-    public static String selvitaArvo(String arvo){
+    public static String selvitaArvo(String arvo) {
         double tulos = Double.parseDouble(arvo);
         return toFunktiolaskinString(tulos);
     }
     
     //muuttaa doublen stringiksi ja postaa ylimääräiset nollat
     public static String toFunktiolaskinString(double input) {
-        return input == (int)input ? 
-            Integer.toString((int)input) : poistaDesimaaliaSeuraavatNollat(String.format("%.6f", input));
+        return input == (int) input ? 
+            Integer.toString((int) input) : poistaDesimaaliaSeuraavatNollat(String.format("%.6f", input));
     }
     
     //poistaa ylimääräiset nollat

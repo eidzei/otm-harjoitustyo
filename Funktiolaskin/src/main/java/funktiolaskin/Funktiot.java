@@ -4,9 +4,9 @@ import java.util.function.DoubleFunction;
 import java.lang.Math;
 
 public enum Funktiot {
-    NELIO("x^2", (x) -> x*x),
-    KUUTIO("x^3", (x) -> x*x*x),
-    YKSPERX("1/x", (x) -> 1/x),
+    NELIO("x^2", (x) -> x * x),
+    KUUTIO("x^3", (x) -> x * x * x),
+    YKSPERX("1/x", (x) -> 1 / x),
     NELIOJUURI("\u221A", (x) -> Math.sqrt(x)),
     LNX("ln x", (x) -> Math.log(x)),
     LOGTEN("log10", (x) -> Math.log10(x)),
