@@ -11,19 +11,22 @@ public class Funktiolaskin {
         return toFunktiolaskinString(tulos);
     }
     
+    //poistaa ylimääräiset nollat, ei ehkä kaunein mahdollinen ratkaisu
+    public static String fmt(double d) {
+        if (d == (long) d)
+            return String.format("%d",(long)d);
+        else
+            return String.format("%s",d);
+    }
+    
     //muuttaa doublen stringiksi ja postaa ylimääräiset nollat
     public static String toFunktiolaskinString(double input) {
         return input == (int) input ? 
-            Integer.toString((int) input) : poistaDesimaaliaSeuraavatNollat(String.format("%.6f", input));
-    }
-    
-    //poistaa ylimääräiset nollat
-    public static String poistaDesimaaliaSeuraavatNollat(String s) {
-        return s.indexOf(".") < 0 ? s : s.replaceAll("0*$", "").replaceAll("\\.$", "");
+            Integer.toString((int) input) : fmt(input);
     }
     
     //laskee operaation 
-    public static String laskeOperaatio(Operaattori op, TextField main, TextField apu) {
+    public String laskeOperaatio(Operaattori op, TextField main, TextField apu) {
         double arvo1 = Double.parseDouble(apu.getText().replaceAll("[^\\.0-9]", ""));
         double arvo2 = Double.parseDouble(main.getText());
 
@@ -36,7 +39,7 @@ public class Funktiolaskin {
     }
     
     //laskee funktion
-    public static String laskeFunktio(Funktiot funk, TextField main) {
+    public String laskeFunktio(Funktiot funk, TextField main) {
         double arvo = Double.parseDouble(main.getText());
         
         if (arvo == 0 && funk == Funktiot.YKSPERX) {
@@ -47,9 +50,9 @@ public class Funktiolaskin {
     }
     
     //laskee second funktiot
-    public static String laskeSecondFunktio(SecondFunktiot sec, TextField main) {
+    public String laskeSecondFunktio(SecondFunktiot sec, TextField main) {
         double arvo = Double.parseDouble(main.getText());
         double tulos = sec.laske(arvo);
-        return toFunktiolaskinString(arvo);
+        return toFunktiolaskinString(tulos);
     }
 }

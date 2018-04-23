@@ -74,14 +74,14 @@ public class GuiMain extends Application {
     public VBox naytto() {
         //näyttää ennen operaatiota tai funktiota kirjoitetun tuloksen
         apuNaytto = new TextField();
-        apuNaytto.setStyle("-fx-font-size: 15; -fx-text-fill: gray");
-        apuNaytto.setMaxWidth(815);
+        apuNaytto.setStyle("-fx-font-size: 10; -fx-text-fill: gray");
+        apuNaytto.setMaxWidth(615);
         apuNaytto.setEditable(false);
         
         //tähän kirjoitetaan
         naytto = new TextField();
-        naytto.setStyle("-fx-font-size: 40");
-        naytto.setMaxWidth(815);
+        naytto.setStyle("-fx-font-size: 20");
+        naytto.setMaxWidth(615);
         naytto.setEditable(false);
         
         //asettelu
@@ -108,10 +108,11 @@ public class GuiMain extends Application {
             }
             String symboli = funk.toString();
             Button funkNappi = new Button(symboli);
-            funkNappi.setMinSize(100, 100);
+            funkNappi.setMinSize(50, 50);
             funkNappi.setStyle("-fx-color: gray");
             funkNappi.setOnAction(e-> {
                 if (apuNaytto.getText().isEmpty() && !naytto.getText().isEmpty()) {
+                    //apuNaytto.setText(funk+ "(" + naytto.getText() + ")");
                     funktioNyt = funk;
                     naytto.setText(laskin.laskeFunktio(funktioNyt, naytto));
                     tulosNaytetty = true;
@@ -139,7 +140,7 @@ public class GuiMain extends Application {
             }
             String symboli = funk.toString();
             Button funkNappi = new Button(symboli);
-            funkNappi.setMinSize(100, 100);
+            funkNappi.setMinSize(50, 50);
             funkNappi.setStyle("-fx-color: gray");
             funkNappi.setOnAction(e-> {
                 if (apuNaytto.getText().isEmpty() && !naytto.getText().isEmpty()) {
@@ -163,7 +164,7 @@ public class GuiMain extends Application {
         
         //second nappi
         Button second = new Button("2nd");
-        second.setMinSize(100, 100);
+        second.setMinSize(50, 50);
         second.setStyle("-fx-color: gray");
         second.setOnAction(e -> {
             if (!secondNappi) {
@@ -180,7 +181,7 @@ public class GuiMain extends Application {
         
         //neperin luku
         Button ee = new Button("e");
-        ee.setMinSize(100, 100);
+        ee.setMinSize(50, 50);
         ee.setStyle("-fx-color: gray");
         ee.setOnAction(e -> {
             if (naytto.getText().isEmpty() && !tulosNaytetty) {
@@ -199,7 +200,7 @@ public class GuiMain extends Application {
         
         //pi nappi
         Button pi = new Button("\u03C0");
-        pi.setMinSize(100, 100);
+        pi.setMinSize(50, 50);
         pi.setStyle("-fx-color: gray");
         pi.setOnAction(e -> {
             if (naytto.getText().isEmpty() && !tulosNaytetty) {
@@ -217,7 +218,7 @@ public class GuiMain extends Application {
         
         //rand nappi
         Button rand = new Button("rand");
-        rand.setMinSize(100, 100);
+        rand.setMinSize(50, 50);
         rand.setStyle("-fx-color: gray");
         rand.setOnAction(e -> {
             if (naytto.getText().isEmpty() && !tulosNaytetty) {
@@ -246,7 +247,7 @@ public class GuiMain extends Application {
         
         //clear
         Button clear = new Button("clear");
-        clear.setMinSize(200, 100);
+        clear.setMinSize(105, 50);
         clear.setOnAction(e -> {
             naytto.clear();
             apuNaytto.clear();
@@ -257,7 +258,7 @@ public class GuiMain extends Application {
         
         //backspace
         Button takaisin = new Button("\u2190");
-        takaisin.setMinSize(100, 100);
+        takaisin.setMinSize(50, 50);
         takaisin.setOnAction(e-> {
             String teksti = naytto.getText();
             if (!teksti.isEmpty() && !tulosNaytetty) {
@@ -273,7 +274,7 @@ public class GuiMain extends Application {
                 String numero = Integer.toString(kohde);
                 
                 numeroNappi[kohde] = new Button(numero);
-                numeroNappi[kohde].setMinSize(100, 100);
+                numeroNappi[kohde].setMinSize(50, 50);
                 numeroNappi[kohde].setOnAction(e -> {
                     if (tulosNaytetty) {
                         naytto.setText(numero);
@@ -289,7 +290,7 @@ public class GuiMain extends Application {
         
         //nolla
         numeroNappi[0] = new Button("0");
-        numeroNappi[0].setMinSize(200, 100);
+        numeroNappi[0].setMinSize(105, 50);
         numeroNappi[0].setOnAction(e -> {
                     if (tulosNaytetty) {
                         naytto.setText("0");
@@ -303,8 +304,8 @@ public class GuiMain extends Application {
         nappiLayout.add(numeroNappi[0], 0, 4);
                
         //desimaalipiste
-        Button desimaali = new Button(",");
-        desimaali.setMinSize(100, 100);
+        Button desimaali = new Button(".");
+        desimaali.setMinSize(50, 50);
         desimaali.setOnAction(e-> {
             if (!naytto.getText().isEmpty() && tulosNaytetty == false) {
                 naytto.appendText(".");
@@ -318,7 +319,7 @@ public class GuiMain extends Application {
             String symboli = op.toString();
             
             Button nappi = new Button(symboli);
-            nappi.setMinSize(100, 100);
+            nappi.setMinSize(50, 50);
             nappi.setStyle("-fx-color: orange");
             nappi.setOnAction(e -> {
                 if (apuNaytto.getText().isEmpty()) {
@@ -346,7 +347,7 @@ public class GuiMain extends Application {
         //on yhta kuin nappi
         Button onYhtaKuin = new Button("=");
         onYhtaKuin.setStyle("-fx-color: orange");
-        onYhtaKuin.setMinSize(100, 100);
+        onYhtaKuin.setMinSize(50, 50);
         onYhtaKuin.setOnAction(e-> {
             if (!apuNaytto.getText().isEmpty()) {
                 naytto.setText(laskin.laskeOperaatio(operaattoriNyt, naytto, apuNaytto));

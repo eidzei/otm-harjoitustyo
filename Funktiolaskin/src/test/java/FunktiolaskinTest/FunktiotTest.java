@@ -22,12 +22,13 @@ public class FunktiotTest {
     
     @Test
     public void funktiotToStringToimii() {
-        assertEquals(funk.NELIO.toString(), "x^2");
-        assertEquals(funk.KUUTIO.toString(), "x^3");
+        assertEquals(funk.NELIO.toString(), "x\u00B2");
+        assertEquals(funk.KUUTIO.toString(), "x\u00B3");
         assertEquals(funk.YKSPERX.toString(), "1/x");
-        assertEquals(funk.LNX.toString(), "ln x");
-        assertEquals(funk.LOGTEN.toString(), "log10");
+        assertEquals(funk.LNX.toString(), "ln");
+        assertEquals(funk.LOGTEN.toString(), "log\u2081\u2080");
         assertEquals(funk.NELIOJUURI.toString(), "\u221A");
+        assertEquals(funk.KUUTIOJUURI.toString(), "\u221B");
         assertEquals(funk.SIN.toString(), "sin");
         assertEquals(funk.COS.toString(), "cos");
         assertEquals(funk.TAN.toString(), "tan");
@@ -43,6 +44,7 @@ public class FunktiotTest {
         assertThat(funk.LOGTEN.laske(10.0), is(1.0));
         assertThat(funk.SIN.laske(Math.PI/2.0), is(0.9999999999999999999));
         assertThat(funk.COS.laske(Math.PI), is(-1.0));
+        assertThat(funk.KUUTIOJUURI.laske(8.0), is(2.0));
         //assertThat(funk.TAN.laske(Math.PI/4.0), is(0.9999999999999999999));
     }
     
