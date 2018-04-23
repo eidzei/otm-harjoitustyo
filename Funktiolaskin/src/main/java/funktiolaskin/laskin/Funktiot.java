@@ -8,6 +8,7 @@ public enum Funktiot {
     KUUTIO("x^3", (x) -> x * x * x),
     YKSPERX("1/x", (x) -> 1 / x),
     NELIOJUURI("\u221A", (x) -> Math.sqrt(x)),
+    KUUTIOJUURI("\u221B", (x) -> Math.cbrt(x)),
     LNX("ln x", (x) -> Math.log(x)),
     LOGTEN("log10", (x) -> Math.log10(x)),
     SIN("sin", (x) -> Math.sin(x)),

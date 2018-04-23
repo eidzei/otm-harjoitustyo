@@ -19,7 +19,7 @@ public class Funktiolaskin {
     
     //poistaa ylimääräiset nollat
     public static String poistaDesimaaliaSeuraavatNollat(String s) {
-        return !s.contains(".") ? s : s.replaceAll("0*$", "").replaceAll("\\.$", "");
+        return s.indexOf(".") < 0 ? s : s.replaceAll("0*$", "").replaceAll("\\.$", "");
     }
     
     //laskee operaation 
@@ -38,7 +38,18 @@ public class Funktiolaskin {
     //laskee funktion
     public static String laskeFunktio(Funktiot funk, TextField main) {
         double arvo = Double.parseDouble(main.getText());
+        
+        if (arvo == 0 && funk == Funktiot.YKSPERX) {
+            return "Nollalla ei voi jakaa";
+        }
         double tulos = funk.laske(arvo);
         return toFunktiolaskinString(tulos);
+    }
+    
+    //laskee second funktiot
+    public static String laskeSecondFunktio(SecondFunktiot sec, TextField main) {
+        double arvo = Double.parseDouble(main.getText());
+        double tulos = sec.laske(arvo);
+        return toFunktiolaskinString(arvo);
     }
 }

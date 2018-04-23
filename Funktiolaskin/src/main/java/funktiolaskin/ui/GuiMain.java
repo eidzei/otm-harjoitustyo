@@ -5,6 +5,7 @@ package funktiolaskin.ui;
 import funktiolaskin.laskin.Funktiolaskin;
 import funktiolaskin.laskin.Funktiot;
 import funktiolaskin.laskin.Operaattori;
+import funktiolaskin.laskin.SecondFunktiot;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
@@ -21,12 +22,17 @@ public class GuiMain extends Application {
     //mikä operaatio valittu
     static Operaattori operaattoriNyt;
     //mikä funtio valittu
-    static Funktiot funktioNyt; 
+    static Funktiot funktioNyt;
+    //mikä second funktio valittu
+    static SecondFunktiot secondNyt;
     //onko operaatio valittu
     static boolean valittuOperaattori;
     //onko tulos naytetty
     static boolean tulosNaytetty;
+    //secondnappi valittu
+    static boolean secondNappi;
     
+    BorderPane layout;
     private VBox tulosTaulu;
     private TextField apuNaytto;
     private TextField naytto;
@@ -40,15 +46,18 @@ public class GuiMain extends Application {
     @Override
     public void start(Stage ikkuna) {
         //Luodaan Layout ja sommitellaan asettelu
-        BorderPane layout = new BorderPane();
+        layout = new BorderPane();
         
         tulosTaulu = naytto();
         
         layout.setTop(tulosTaulu);
+       
+        layout.setLeft(muutNapit());
         
         layout.setRight(numeroNapit());
         
-        layout.setLeft(funktioNapit());
+        layout.setCenter(funktioNapit());
+        
         
         Scene scene = new Scene(layout);
         
@@ -59,53 +68,6 @@ public class GuiMain extends Application {
         ikkuna.show();
        
         
-    }
-    
-    //Luodaan funktionappaimet, toiminnot lisataan myohemmin
-    public GridPane funktioNapit() {
-        GridPane funktioLayout = new GridPane();
-        funktioLayout.setPadding(new Insets(10, 10, 0, 0));
-        funktioLayout.setHgap(5);
-        funktioLayout.setVgap(5);
-        
-        int column = 0;
-        int row=0;
-        for(Funktiot funk: Funktiot.values()){
-            if (row == 2){
-                row =0;
-                column++;
-            }
-            String symboli = funk.toString();
-            Button funkNappi = new Button(symboli);
-            funkNappi.setMinSize(100, 100);
-            funkNappi.setStyle("-fx-color: gray");
-            funkNappi.setOnAction(e-> {
-               if (apuNaytto.getText().isEmpty() && !naytto.getText().isEmpty()){
-                   funktioNyt = funk;
-                   naytto.setText(laskin.laskeFunktio(funktioNyt, naytto));
-               }
-            });
-            funktioLayout.add(funkNappi, row, column); 
-            row++;
-            }
-            
-        //pi nappi
-        Button pi = new Button("pi");
-        pi.setMinSize(100, 100);
-        pi.setStyle("-fx-color: gray");
-        pi.setOnAction(e -> {
-            if(naytto.getText().isEmpty()){
-                naytto.setText(String.valueOf(Math.PI));
-                tulosNaytetty = false;
-            } else{
-                naytto.setText(String.valueOf(Math.PI));
-            }
-            
-            valittuOperaattori = false;
-        });
-        funktioLayout.add(pi, 1, 4);
-        
-        return funktioLayout;
     }
     
     //nayton asettelu
@@ -128,6 +90,152 @@ public class GuiMain extends Application {
         
         return nayttoLayout;
     }
+    
+    
+    //Luodaan funktionappaimet, toiminnot lisataan myohemmin
+    public GridPane funktioNapit() {
+        GridPane funktioLayout = new GridPane();
+        funktioLayout.setPadding(new Insets(10, 10, 0, 0));
+        funktioLayout.setHgap(5);
+        funktioLayout.setVgap(5);
+        
+        int column = 0;
+        int row = 0;
+        for (Funktiot funk: Funktiot.values()) {
+            if (row == 2) {
+                row = 0;
+                column++;
+            }
+            String symboli = funk.toString();
+            Button funkNappi = new Button(symboli);
+            funkNappi.setMinSize(100, 100);
+            funkNappi.setStyle("-fx-color: gray");
+            funkNappi.setOnAction(e-> {
+                if (apuNaytto.getText().isEmpty() && !naytto.getText().isEmpty()) {
+                    funktioNyt = funk;
+                    naytto.setText(laskin.laskeFunktio(funktioNyt, naytto));
+                    tulosNaytetty = true;
+                }
+            });
+            funktioLayout.add(funkNappi, row, column); 
+            row++;
+        }
+        
+        return funktioLayout;
+    }
+    
+    public GridPane secondFunktioNapit() {
+        GridPane secondLayout = new GridPane();
+        secondLayout.setPadding(new Insets(10, 10, 0, 0));
+        secondLayout.setHgap(5);
+        secondLayout.setVgap(5);
+        
+        int column = 0;
+        int row = 0;
+        for (SecondFunktiot funk: SecondFunktiot.values()) {
+            if (row == 2) {
+                row = 0;
+                column++;
+            }
+            String symboli = funk.toString();
+            Button funkNappi = new Button(symboli);
+            funkNappi.setMinSize(100, 100);
+            funkNappi.setStyle("-fx-color: gray");
+            funkNappi.setOnAction(e-> {
+                if (apuNaytto.getText().isEmpty() && !naytto.getText().isEmpty()) {
+                    secondNyt = funk;
+                    naytto.setText(laskin.laskeSecondFunktio(secondNyt, naytto));
+                    tulosNaytetty = true;
+                }
+            });
+            secondLayout.add(funkNappi, row, column); 
+            row++;
+        }
+        
+        return secondLayout;
+    }
+    
+    public GridPane muutNapit() {
+        GridPane muutLayout  = new GridPane();
+        muutLayout.setPadding(new Insets(10, 10, 0, 0));
+        muutLayout.setHgap(5);
+        muutLayout.setVgap(5);
+        
+        //second nappi
+        Button second = new Button("2nd");
+        second.setMinSize(100, 100);
+        second.setStyle("-fx-color: gray");
+        second.setOnAction(e -> {
+            if (!secondNappi) {
+                second.setStyle("-fx-color: white");
+                secondNappi = true;
+                layout.setCenter(secondFunktioNapit());
+            } else {
+                second.setStyle("-fx-color: gray");
+                secondNappi = false;
+                layout.setCenter(funktioNapit());
+            }
+        });
+        muutLayout.add(second, 0, 0);
+        
+        //neperin luku
+        Button ee = new Button("e");
+        ee.setMinSize(100, 100);
+        ee.setStyle("-fx-color: gray");
+        ee.setOnAction(e -> {
+            if (naytto.getText().isEmpty() && !tulosNaytetty) {
+                naytto.setText(String.valueOf(Math.E));
+              
+            } else if (valittuOperaattori) {
+                naytto.setText(String.valueOf(Math.E));
+            } else if (naytto.getText().isEmpty()) {
+                naytto.setText(String.valueOf(Math.E));
+            }
+                
+            
+            valittuOperaattori = false;
+        });
+        muutLayout.add(ee, 0, 1);
+        
+        //pi nappi
+        Button pi = new Button("\u03C0");
+        pi.setMinSize(100, 100);
+        pi.setStyle("-fx-color: gray");
+        pi.setOnAction(e -> {
+            if (naytto.getText().isEmpty() && !tulosNaytetty) {
+                naytto.setText(String.valueOf(Math.PI));
+              
+            } else if (valittuOperaattori) {
+                naytto.setText(String.valueOf(Math.PI));
+            } else if (naytto.getText().isEmpty()) {
+                naytto.setText(String.valueOf(Math.PI));
+            }
+            
+            valittuOperaattori = false;
+        });
+        muutLayout.add(pi, 0, 2);
+        
+        //rand nappi
+        Button rand = new Button("rand");
+        rand.setMinSize(100, 100);
+        rand.setStyle("-fx-color: gray");
+        rand.setOnAction(e -> {
+            if (naytto.getText().isEmpty() && !tulosNaytetty) {
+                naytto.setText(String.valueOf(Math.random()));
+              
+            } else if (valittuOperaattori) {
+                naytto.setText(String.valueOf(Math.random()));
+            } else if (naytto.getText().isEmpty()) {
+                naytto.setText(String.valueOf(Math.random()));
+            }
+            
+            valittuOperaattori = false;
+        });
+        muutLayout.add(rand, 0, 3);
+        
+        return muutLayout;
+    }
+    
     
     //numeronappaimisto
     public GridPane numeroNapit() {
@@ -182,14 +290,23 @@ public class GuiMain extends Application {
         //nolla
         numeroNappi[0] = new Button("0");
         numeroNappi[0].setMinSize(200, 100);
+        numeroNappi[0].setOnAction(e -> {
+                    if (tulosNaytetty) {
+                        naytto.setText("0");
+                        tulosNaytetty = false;
+                    } else {
+                        naytto.appendText("0");
+                    }
+                    valittuOperaattori = false;
+                });
         GridPane.setColumnSpan(numeroNappi[0], 2);
         nappiLayout.add(numeroNappi[0], 0, 4);
                
         //desimaalipiste
-        Button desimaali = new Button(".");
+        Button desimaali = new Button(",");
         desimaali.setMinSize(100, 100);
         desimaali.setOnAction(e-> {
-            if(!naytto.getText().isEmpty()){
+            if (!naytto.getText().isEmpty() && tulosNaytetty == false) {
                 naytto.appendText(".");
                 valittuOperaattori = false;
             }

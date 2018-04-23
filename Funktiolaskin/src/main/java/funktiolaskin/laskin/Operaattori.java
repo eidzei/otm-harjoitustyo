@@ -1,6 +1,6 @@
 package funktiolaskin.laskin;
 
-import java.util.function.DoubleBinaryOperator;
+import java.util.function.BinaryOperator;
 
 
 public enum Operaattori {
@@ -11,16 +11,16 @@ public enum Operaattori {
     
     
     private final String symboli;
-    private final DoubleBinaryOperator lasku;
+    private final BinaryOperator<Double> lasku;
 
 
-    Operaattori(String symboli, DoubleBinaryOperator lasku) {
+    Operaattori(String symboli, BinaryOperator<Double> lasku) {
         this.symboli = symboli;
         this.lasku = lasku;
     }
 
     public double laske(double x, double y) {
-        return lasku.applyAsDouble(x, y);
+        return lasku.apply(x, y);
     }
 
     @Override
