@@ -13,7 +13,7 @@ laskutoimitukseia.
 
 ## Releaset
 
-[Viikko 5] (https://github.com/eidzei/otm-harjoitustyo/releases/tag/viiko5)
+[Viikko 5](https://github.com/eidzei/otm-harjoitustyo/releases/tag/viiko5)
 
 ## Komentorivitoiminnot
 
