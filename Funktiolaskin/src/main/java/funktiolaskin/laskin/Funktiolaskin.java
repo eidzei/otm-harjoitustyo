@@ -13,10 +13,11 @@ public class Funktiolaskin {
     
     //poistaa ylimääräiset nollat, ei ehkä kaunein mahdollinen ratkaisu
     public static String fmt(double d) {
-        if (d == (long) d)
-            return String.format("%d",(long)d);
-        else
-            return String.format("%s",d);
+        if (d == (long) d) {
+            return String.format("%d", (long) d);
+        } else {
+            return String.format("%s", d);
+        }
     }
     
     //muuttaa doublen stringiksi ja postaa ylimääräiset nollat

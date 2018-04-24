@@ -14,14 +14,33 @@ import funktiolaskin.ui.*;
 public class FunktiolaskinTest {
     
     Funktiolaskin laskin;
-    GuiMain gui;
+    
     
     @Before
     public void setUp() {
         laskin = new Funktiolaskin();
-        gui = new GuiMain();
-        gui.naytto();
+        
     }
+    
+    @Test
+    public void noillienPoisto() {
+        long pitka = 3;
+        assertTrue(laskin.fmt(3.3000).equals("3.3"));
+        assertTrue(laskin.fmt(pitka).equals("3"));
+    }
+    
+    @Test
+    public void toFunktiolaskinStringTesti() {
+        long pitka = 3;
+        assertTrue(laskin.toFunktiolaskinString(3.3).equals("3.3"));
+        assertTrue(laskin.toFunktiolaskinString(pitka).equals("3"));
+    }
+    
+    @Test
+    public void selvitaArvoToimiiOikein() {
+        assertTrue(laskin.selvitaArvo("3.3").equals("3.3"));
+    }
+    
     
     
     
