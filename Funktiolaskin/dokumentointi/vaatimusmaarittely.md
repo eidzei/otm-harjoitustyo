@@ -4,11 +4,12 @@ Sovelluksen avulla pystytään laskemaan perus laskutoimituksia, sekä monimutka
 trigonometrisia funktioita.
 
 ## Suunnitellut toiminnallisuudet
-* Kursorilla tai näppimistöllä voi valita haluamansa numerot tai laskutoimitukset graafiselta käyttöliittymältä.
+* Kursorilla voi valita haluamansa numerot tai laskutoimitukset graafiselta käyttöliittymältä.
 * Sovellus näyttää käyttäjän valitsemat toiminnot "näytöllä" valintajärjestyksessä, vasemmalta oikealle. 
 * Sovellus suorittaa käyttäjän haluaman laskutoimituksen kun on yhtä kuin merkki on valittu.
+* Sovelluksessa on second nappi, jonka valitsemalla saa esiin lisää funktioita
 * Sovelluksella on myös mahdollista tallentaa omia arvoja esimerkiksi x muuttujalle, ja käättää niitä laskutoimituksissa. 
-* Sovellus käyttää sovullukseen ohjelmoitua tarkkaa piin likiarvoa esimerkiksi ympyrän piirin laskemiseen.
+* Sovellus käyttää Java.lang.Math.* kirjastoa funktioiden laskemiseen ja piin ja neperinluvun likiarvoihin.
 * Sovellus muistaa muutaman käyttäjän aiemman laskutoimituksen ja ne on mahdollista avata näppäinkomennolla. 
 
 ## Jatkokehitysideoita
