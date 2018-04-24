@@ -6,3 +6,6 @@ Päivä | Aika | Mitä tein
 9.4 | 3h | Alustava gui ja toimintalogiikka
 10.4 | 3h | Funktioita, operaatioita lisätty
 17.4| 5h | Testit, checkstyle, arkkitehtuuri
+23.4 | 4h | Secondnappi + sndfunktioit, operaatiot toimimaan
+24.3 | 3h | Testejä, release, sekvenssikaavio
+yht | 20h
