@@ -13,12 +13,12 @@ import funktiolaskin.ui.*;
 
 public class FunktiolaskinTest {
     
-    Funktiolaskin laskin;
+    Calculator laskin;
     
     
     @Before
     public void setUp() {
-        laskin = new Funktiolaskin();
+        laskin = new Calculator();
         
     }
     
@@ -38,7 +38,7 @@ public class FunktiolaskinTest {
     
     @Test
     public void selvitaArvoToimiiOikein() {
-        assertTrue(laskin.selvitaArvo("3.3").equals("3.3"));
+        assertTrue(laskin.findValue("3.3").equals("3.3"));
     }
     
     

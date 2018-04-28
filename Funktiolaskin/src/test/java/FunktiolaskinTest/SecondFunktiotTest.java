@@ -1,7 +1,7 @@
 
 package FunktiolaskinTest;
 
-import funktiolaskin.laskin.SecondFunktiot;
+import funktiolaskin.laskin.SecondFunctions;
 import static org.hamcrest.CoreMatchers.is;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 
 public class SecondFunktiotTest {
     
-    SecondFunktiot funk;
+    SecondFunctions funk;
     
     @Test
     public void funktiotToStringToimii() {
