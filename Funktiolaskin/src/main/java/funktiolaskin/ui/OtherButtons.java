@@ -1,6 +1,8 @@
 
 package funktiolaskin.ui;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
@@ -13,7 +15,9 @@ public class OtherButtons {
     private final Button e;
     private final Button pii;
     private final Button random;
+    private static Button varX;
     private static boolean secondButton;
+    private static double ex = 0.0;
     
     public OtherButtons() {
         othorsLayout  = new GridPane();
@@ -36,6 +40,10 @@ public class OtherButtons {
         random = rand();
         othorsLayout.add(random, 0, 3);
         
+        //x nappi
+        varX = x();
+        othorsLayout.add(varX, 0, 4);
+        
     }
     
     //second nappi
@@ -43,15 +51,18 @@ public class OtherButtons {
         Button second = new Button("2nd");
         second.setMinSize(50, 50);
         second.setStyle("-fx-color: gray");
-        second.setOnAction(e -> {
+        second.setOnAction((ActionEvent e1) -> {
             if (!secondButton) {
                 second.setStyle("-fx-color: white");
                 secondButton = true;
                 Interface.getWindow().setCenter(Interface.getSecond());
+                varX.setText("x=?");
+                
             } else {
                 second.setStyle("-fx-color: gray");
                 secondButton = false;
                 Interface.getWindow().setCenter(Interface.getFunction());
+                varX.setText("x");
             }
         });
         return second;
@@ -117,6 +128,31 @@ public class OtherButtons {
         });
         return rand;
     }
+    
+    //x 
+    private static Button x() {
+        Button x = new Button("x");
+        x.setMinSize(50, 50);
+        x.setStyle("-fx-color: gray");
+        x.setOnAction(e -> {
+            if (secondButton) {
+                ex = Double.valueOf(Display.getMain().getText());
+                Display.getMain().clear();    
+            } else if (Display.getMain().getText().isEmpty() && !Display.getDisplayed()) {
+                Display.getMain().setText(String.valueOf(ex));
+            } else if (NumberButtons.getChosenOperator()) {
+                Display.getMain().setText(String.valueOf(ex));
+            } else if (Display.getMain().getText().isEmpty()) {
+                Display.getMain().setText(String.valueOf(ex));
+            }
+            
+            NumberButtons.setChosenOperator(false);
+        });
+        
+        return x;
+    }
+    
+    
     
     public static GridPane getButtons() {
         return othorsLayout;
