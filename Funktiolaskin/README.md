@@ -1,7 +1,7 @@
 # Funktiolaskin
 Harhoitustyö kurssittelle Ohjelmistotekniikan menetelmät. Sovelluksen 
 tarkoituksena on laskea yksinkertaisia funktioita ja muita 
-laskutoimitukseia.
+laskutoimituksia. Sovellus on työpöytäsovellus, jota käytetään valitsemalla kursorilla haluttu toiminto. 
 
 ## Dokumentaatio
 
