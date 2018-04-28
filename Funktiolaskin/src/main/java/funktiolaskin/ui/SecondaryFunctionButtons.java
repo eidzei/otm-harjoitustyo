@@ -13,7 +13,7 @@ public class SecondaryFunctionButtons {
     
     private SecondFunctions functionNow;
     
-    public SecondaryFunctionButtons(){
+    public SecondaryFunctionButtons() {
         secondaryFunctionLayout = new GridPane();
         secondaryFunctionLayout.setPadding(new Insets(10, 10, 0, 0));
         secondaryFunctionLayout.setHgap(5);
@@ -45,7 +45,7 @@ public class SecondaryFunctionButtons {
         
     }
     
-    public static GridPane getFunctions(){
+    public static GridPane getFunctions() {
         return secondaryFunctionLayout;
     }
     

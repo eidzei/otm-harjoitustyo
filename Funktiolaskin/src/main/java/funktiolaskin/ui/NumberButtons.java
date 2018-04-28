@@ -33,7 +33,7 @@ public class NumberButtons {
         buttonLayout.add(clear, 0, 0);
         
         //backspace
-        backspace= backspace();
+        backspace = backspace();
         buttonLayout.add(backspace, 2, 0);
         
         //luodaan numeronapit
@@ -51,7 +51,7 @@ public class NumberButtons {
     }
     
     //clear
-    private Button clear(){
+    private Button clear() {
         Button clr = new Button("clear");
         clr.setMinSize(105, 50);
         clr.setOnAction(e -> {
@@ -64,7 +64,7 @@ public class NumberButtons {
     }
     
     //takaisin
-    private Button backspace(){
+    private Button backspace() {
         Button bckspc = new Button("\u2190");
         bckspc.setMinSize(50, 50);
         bckspc.setOnAction(e-> {
@@ -77,7 +77,7 @@ public class NumberButtons {
         return bckspc;
     }
     
-    private Button[] numbers(){
+    private Button[] numbers() {
         //numerotnäppäimet
         Button[] numeroNappi = new Button[10];
         for (int i = 3, kohde = 1; i >= 1; i--) {
@@ -103,14 +103,14 @@ public class NumberButtons {
         numeroNappi[0] = new Button("0");
         numeroNappi[0].setMinSize(105, 50);
         numeroNappi[0].setOnAction(e -> {
-                    if (Display.getDisplayed()) {
-                        Display.getMain().setText("0");
-                        Display.setResultDisplayed(false);
-                    } else {
-                        Display.getMain().setText("0");
-                    }
-                    chosenOperator = false;
-                });
+            if (Display.getDisplayed()) {
+                Display.getMain().setText("0");
+                Display.setResultDisplayed(false);
+            } else {
+                Display.getMain().setText("0");
+            }
+            chosenOperator = false;
+        });
         GridPane.setColumnSpan(numeroNappi[0], 2);
         buttonLayout.add(numeroNappi[0], 0, 4);
         
@@ -118,7 +118,7 @@ public class NumberButtons {
     }
     
     //desimaalipiste
-    private Button decimal(){
+    private Button decimal() {
         Button decimal = new Button(".");
         decimal.setMinSize(50, 50);
         decimal.setOnAction(e-> {
@@ -132,7 +132,7 @@ public class NumberButtons {
     }
     
     //operaatiot
-    private void operations(){
+    private void operations() {
         for (Operators op: Operators.values()) {
             String symboli = op.toString();
             
@@ -164,7 +164,7 @@ public class NumberButtons {
     }
     
     //on yhtä kuin
-    private Button equals(){
+    private Button equals() {
         Button solve = new Button("=");
         solve.setStyle("-fx-color: orange");
         solve.setMinSize(50, 50);
@@ -182,19 +182,19 @@ public class NumberButtons {
         return solve;
     }
     
-    public static Operators getOperatorNow(){
+    public static Operators getOperatorNow() {
         return operatorNow;
     }
     
-    public static boolean getChosenOperator(){
+    public static boolean getChosenOperator() {
         return chosenOperator;
     }
     
-    public static GridPane getNumberButtons(){
+    public static GridPane getNumberButtons() {
         return buttonLayout;
     }
     
-    public static void setChosenOperator(boolean value){
+    public static void setChosenOperator(boolean value) {
         chosenOperator = value;
     }
 

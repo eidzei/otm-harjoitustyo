@@ -5,7 +5,7 @@ import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 
-public class OtherButtons{
+public class OtherButtons {
     
     public static GridPane othorsLayout;
     
@@ -15,13 +15,13 @@ public class OtherButtons{
     private final Button random;
     private static boolean secondButton;
     
-    public OtherButtons(){
+    public OtherButtons() {
         othorsLayout  = new GridPane();
         othorsLayout.setPadding(new Insets(10, 10, 0, 0));
         othorsLayout.setHgap(5);
         othorsLayout.setVgap(5);
         
-        scnd=secondButton();
+        scnd = secondButton();
         othorsLayout.add(scnd, 0, 0);
         
         //neperin luku
@@ -39,7 +39,7 @@ public class OtherButtons{
     }
     
     //second nappi
-    public static Button secondButton(){
+    public static Button secondButton() {
         Button second = new Button("2nd");
         second.setMinSize(50, 50);
         second.setStyle("-fx-color: gray");
@@ -58,7 +58,7 @@ public class OtherButtons{
     }
     
     //e nappi
-    private static Button e(){
+    private static Button e() {
         Button ee = new Button("e");
         ee.setMinSize(50, 50);
         ee.setStyle("-fx-color: gray");
@@ -79,7 +79,7 @@ public class OtherButtons{
     }
     
     //pi nappi
-    private static Button pi(){
+    private static Button pi() {
         Button pi = new Button("\u03C0");
         pi.setMinSize(50, 50);
         pi.setStyle("-fx-color: gray");
@@ -99,7 +99,7 @@ public class OtherButtons{
     }
     
     //random luku
-    private static Button rand(){
+    private static Button rand() {
         Button rand = new Button("rand");
         rand.setMinSize(50, 50);
         rand.setStyle("-fx-color: gray");
@@ -118,7 +118,7 @@ public class OtherButtons{
         return rand;
     }
     
-    public static GridPane getButtons(){
+    public static GridPane getButtons() {
         return othorsLayout;
     }
 }

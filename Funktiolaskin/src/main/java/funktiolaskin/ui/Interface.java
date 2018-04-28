@@ -37,13 +37,13 @@ public class Interface {
         second = secondary.getFunctions();
         
         window.setTop(display.getDisplay());
-        window.setAlignment(display.getDisplay(), Pos.TOP_CENTER);
+        
         window.setLeft(otherButtons.getButtons());
-        window.setAlignment(otherButtons.getButtons(), Pos.CENTER_LEFT);
+       
         window.setCenter(functions);
         window.setAlignment(functions, Pos.CENTER);
         window.setRight(numberButtons.getNumberButtons());
-        window.setAlignment(numberButtons.getNumberButtons(), Pos.CENTER_RIGHT);
+
         
 
         Scene scene = new Scene(window);
@@ -54,19 +54,19 @@ public class Interface {
         return stage;
     }
     
-    public static BorderPane getWindow(){
+    public static BorderPane getWindow() {
         return window;
     }
     
-    public static Calculator getCalculator(){
+    public static Calculator getCalculator() {
         return calc;
     }
     
-    public static GridPane getSecond(){
+    public static GridPane getSecond() {
         return second;
     }
     
-    public static GridPane getFunction(){
+    public static GridPane getFunction() {
         return functions;
     }
 

@@ -5,7 +5,7 @@ package funktiolaskin.ui;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.TextField;
 
-public class Display extends VBox{
+public class Display extends VBox {
 
     
     private static VBox display;
@@ -31,31 +31,31 @@ public class Display extends VBox{
 
     }
 
-    public static VBox getDisplay(){
+    public static VBox getDisplay() {
         return display;
     }
     
-    public static TextField getSecondary(){
+    public static TextField getSecondary() {
         return secondary;
     }
     
-    public static TextField getMain(){
+    public static TextField getMain() {
         return main;
     }
     
-    public static boolean getDisplayed(){
+    public static boolean getDisplayed() {
         return resultDisplayed;
     }
     
-    public static void setMain(String value){
+    public static void setMain(String value) {
         main.setText(value);
     }
     
-    public static void setSecondary(String value){
+    public static void setSecondary(String value) {
         secondary.setText(value);
     }
     
-    public static void setResultDisplayed(boolean boo){
+    public static void setResultDisplayed(boolean boo) {
         resultDisplayed = boo;
     }
     

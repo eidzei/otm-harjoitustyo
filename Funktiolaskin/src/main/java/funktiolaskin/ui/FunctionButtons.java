@@ -13,7 +13,7 @@ public class FunctionButtons {
     
     private Functions functionNow;
     
-    public FunctionButtons(){
+    public FunctionButtons() {
         functionLayout = new GridPane();
         functionLayout.setPadding(new Insets(10, 10, 0, 0));
         functionLayout.setHgap(5);
@@ -45,7 +45,7 @@ public class FunctionButtons {
         
     }
     
-    public static GridPane getFunctions(){
+    public static GridPane getFunctions() {
         return functionLayout;
     }
     
