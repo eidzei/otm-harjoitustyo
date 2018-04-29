@@ -6,13 +6,21 @@ import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 
-
+/**
+ * Luokka luo second napin taakse piiloutuvien funktionappien
+ * asettelun
+ * 
+ * @author eidzey
+ */
 public class SecondaryFunctionButtons {
     
     private static GridPane secondaryFunctionLayout;
     
     private SecondFunctions functionNow;
     
+    /**
+     * Second funktioiden asettelu
+     */
     public SecondaryFunctionButtons() {
         secondaryFunctionLayout = new GridPane();
         secondaryFunctionLayout.setPadding(new Insets(10, 10, 0, 0));
@@ -45,6 +53,11 @@ public class SecondaryFunctionButtons {
         
     }
     
+    /**
+     * Metodi palauttaa second funktionappien GridPanen
+     * 
+     * @return second funktionapit
+     */
     public static GridPane getFunctions() {
         return secondaryFunctionLayout;
     }

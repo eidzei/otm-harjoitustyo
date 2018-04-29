@@ -6,13 +6,19 @@ import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 
-
+/**
+ * Luokka luo funktionäppäinten asettelun ja toiminnot 
+ * @author eidzey
+ */
 public class FunctionButtons {
     
     private static GridPane functionLayout;
     
     private Functions functionNow;
     
+    /**
+     * Funktionappine asettelu ja toiminnot 
+     */
     public FunctionButtons() {
         functionLayout = new GridPane();
         functionLayout.setPadding(new Insets(10, 10, 0, 0));
@@ -45,6 +51,11 @@ public class FunctionButtons {
         
     }
     
+    /**
+     * Metodi palauttaa funktionapit
+     * 
+     * @return funktionapit
+     */
     public static GridPane getFunctions() {
         return functionLayout;
     }

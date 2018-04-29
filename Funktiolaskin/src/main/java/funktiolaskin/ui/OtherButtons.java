@@ -2,11 +2,15 @@
 package funktiolaskin.ui;
 
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 
+/**
+ * Luokka luo muut näppäimet kuten second ja x
+ * 
+ * @author eidzey
+ */
 public class OtherButtons {
     
     public static GridPane othorsLayout;
@@ -19,6 +23,9 @@ public class OtherButtons {
     private static boolean secondButton;
     private static double ex = 0.0;
     
+    /**
+     * Näppäinten asettelu
+     */
     public OtherButtons() {
         othorsLayout  = new GridPane();
         othorsLayout.setPadding(new Insets(10, 10, 0, 0));
@@ -47,7 +54,7 @@ public class OtherButtons {
     }
     
     //second nappi
-    public static Button secondButton() {
+    private static Button secondButton() {
         Button second = new Button("2nd");
         second.setMinSize(50, 50);
         second.setStyle("-fx-color: gray");
@@ -152,8 +159,39 @@ public class OtherButtons {
         return x;
     }
     
+    private Button mc(){
+        Button mc = new Button("mc");
+        mc.setMinSize(50, 50);
+        mc.setStyle("-fx-color: gray");
+        return mc;
+    }
     
+    private Button mPlus(){
+        Button mPlus = new Button("m+");
+        mPlus.setMinSize(50, 50);
+        mPlus.setStyle("-fx-color: gray");
+        return mPlus;
+    }
     
+    private Button mMinus(){
+        Button mMinus = new Button("m-");
+        mMinus.setMinSize(50, 50);
+        mMinus.setStyle("-fx-color: gray");
+        return mMinus;
+    }
+    
+    private static Button mr() {
+        Button mr = new Button("mr");
+        mr.setMinSize(50, 50);
+        mr.setStyle("-fx-color: gray");
+        return mr;
+    }
+    
+    /**
+     * Palauttaa muiden näppäinten GridPanen
+     * 
+     * @return muiden asettelu
+     */
     public static GridPane getButtons() {
         return othorsLayout;
     }

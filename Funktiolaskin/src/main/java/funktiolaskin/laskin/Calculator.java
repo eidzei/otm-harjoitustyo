@@ -3,15 +3,30 @@ package funktiolaskin.laskin;
 
 import javafx.scene.control.TextField;
 
-
+/**
+ * Luokka laskimen perustoimintoja
+ */
 public class Calculator {
-   //Selsvittää stringin arvon
+   
+    /**
+     * Metodi selvittää annetun String muuttujan arvon
+     * liukuluku, poistaen ylimääräiset nollat
+     * 
+     * @param value Selvitettävä String
+     * 
+     * @return String liukulukuna nollat poistettuna
+     */
     public String findValue(String value) {
         double result = Double.parseDouble(value);
         return toFunktiolaskinString(result);
     }
     
-    //poistaa ylimääräiset nollat, ei ehkä kaunein mahdollinen ratkaisu
+    /**
+     * Poistaa liukulukujen perään jäävät ylimääräiset nollat
+     * 
+     * @param d annettu liukuluku
+     * @return nollat poistettu liukuluku
+     */
     public String fmt(double d) {
         if (d == (long) d) {
             return String.format("%d", (long) d);
@@ -20,13 +35,24 @@ public class Calculator {
         }
     }
     
-    //muuttaa doublen stringiksi ja postaa ylimääräiset nollat
+    /**
+     * Metodi muuttaa doublen Stringiksi ja poistaa ylimääräiset nollat
+     * @param input annettu double
+     *
+     * @return double Stringinä
+     */
     public String toFunktiolaskinString(double input) {
         return input == (int) input ? 
             Integer.toString((int) input) : fmt(input);
     }
     
-    //laskee operaation 
+    /**
+     * Metodi laskee operaation 
+     * @param op operaatio
+     * @param main tekstikenttä, jossa toinen luku
+     * @param secondary tekstikenttä, jossa ensimmäinen luku
+     * @return laskuoperaation tulos
+     */
     public String calculateOperation(Operators op, TextField main, TextField secondary) {
         double arvo1 = Double.parseDouble(secondary.getText().replaceAll("[^\\.0-9]", ""));
         double arvo2 = Double.parseDouble(main.getText());
@@ -39,7 +65,12 @@ public class Calculator {
         return toFunktiolaskinString(result);
     }
     
-    //laskee funktion
+    /**
+     * Metodi laskee funktion
+     * @param funk valittu funktio
+     * @param main teksti kenttä, josta luetaan funktion syöte
+     * @return funktion tulos
+     */
     public String calculateFunction(Functions funk, TextField main) {
         double value = Double.parseDouble(main.getText());
         
@@ -50,7 +81,12 @@ public class Calculator {
         return toFunktiolaskinString(result);
     }
     
-    //laskee second funktiot
+    /**
+     * Metodi laskee second funktion
+     * @param sec valittu funktio
+     * @param main teksti kenttä, josta luetaan funktion syöte
+     * @return funktion tulos
+     */
     public String calculateSecondFunction(SecondFunctions sec, TextField main) {
         double value = Double.parseDouble(main.getText());
         double result = sec.laske(value);

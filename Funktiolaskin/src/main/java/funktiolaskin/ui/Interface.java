@@ -8,7 +8,11 @@ import funktiolaskin.laskin.*;
 import javafx.geometry.Pos;
 import javafx.scene.layout.GridPane;
 
-
+/**
+ * Graafisen käyttöliittymän luova luokka
+ * 
+ * @author eidzey
+ */
 public class Interface {
     
     private static BorderPane window;
@@ -21,7 +25,11 @@ public class Interface {
     
     
     
-    
+    /**
+     * Metodi sommittelee graafisen käyttöliittymän
+     * 
+     * @return käyttöliittymä 
+     */
     public static Stage getInterface() {
         //luodaan ja sommiotellaan asettelu
         Stage stage = new Stage();
@@ -54,18 +62,37 @@ public class Interface {
         return stage;
     }
     
+    /**
+     * Ikkunan asettelu
+     * 
+     * @return ikkuna
+     */
     public static BorderPane getWindow() {
         return window;
     }
     
+    /**
+     * Laskimen logiikka
+     * 
+     * @return laskin
+     */
     public static Calculator getCalculator() {
         return calc;
     }
     
+    /**
+     * Second napin taakse piilotettujen funktioiden asettelu
+     * @return second funktiot
+     */
     public static GridPane getSecond() {
         return second;
     }
     
+    /**
+     * Funktioiden asettelu
+     * 
+     * @return funktioit
+     */
     public static GridPane getFunction() {
         return functions;
     }

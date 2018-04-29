@@ -6,7 +6,11 @@ import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 
-
+/**
+ * Luokka luo ja sommittelee numero- ja operaationapit
+ * 
+ * @author eidzey
+ */
 public class NumberButtons {
     
     private static GridPane buttonLayout;
@@ -21,6 +25,9 @@ public class NumberButtons {
     
     private static boolean chosenOperator;
     
+    /**
+     * Numeronappien sommittelu
+     */
     public NumberButtons() {
         buttonLayout = new GridPane();
         buttonLayout.setPadding(new Insets(10, 0, 0, 0));
@@ -182,18 +189,38 @@ public class NumberButtons {
         return solve;
     }
     
+    /**
+     * Metodi kertoo valitun operaation
+     * 
+     * @return operaatio
+     */
     public static Operators getOperatorNow() {
         return operatorNow;
     }
     
+    /**
+     * Metodi kertoo onko operaatio valittu
+     * 
+     * @return operaatio valittu
+     */
     public static boolean getChosenOperator() {
         return chosenOperator;
     }
     
+    /**
+     * Metodi palauttaa numeronappien GridPanen
+     * 
+     * @return numeronapit
+     */
     public static GridPane getNumberButtons() {
         return buttonLayout;
     }
     
+    /**
+     * Metodi muuttaa tietoa, onko operaatio valittu
+     * 
+     * @param value syötetty totuusarvo 
+     */
     public static void setChosenOperator(boolean value) {
         chosenOperator = value;
     }
