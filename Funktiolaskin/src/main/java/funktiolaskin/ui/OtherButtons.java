@@ -159,21 +159,21 @@ public class OtherButtons {
         return x;
     }
     
-    private Button mc(){
+    private Button mc() {
         Button mc = new Button("mc");
         mc.setMinSize(50, 50);
         mc.setStyle("-fx-color: gray");
         return mc;
     }
     
-    private Button mPlus(){
+    private Button mPlus() {
         Button mPlus = new Button("m+");
         mPlus.setMinSize(50, 50);
         mPlus.setStyle("-fx-color: gray");
         return mPlus;
     }
     
-    private Button mMinus(){
+    private Button mMinus() {
         Button mMinus = new Button("m-");
         mMinus.setMinSize(50, 50);
         mMinus.setStyle("-fx-color: gray");
