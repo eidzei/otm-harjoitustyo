@@ -11,6 +11,8 @@ laskutoimituksia. Sovellus on työpöytäsovellus, jota käytetään valitsemall
 
 [Työaikakirjanpito](https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/dokumentointi/tyoaikakirjanpito.md)
 
+[Käyttöohje](https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/dokumentointi/kayttoohje.md)
+
 ## Releaset
 
 [Viikko 5](https://github.com/eidzei/otm-harjoitustyo/releases/tag/viiko5)
@@ -42,6 +44,16 @@ mvn package
 ```
 
 generoi hakemistoon _target_ suoritettavan jar-tiedoston _Funktiolaskin-1.0-SNAPSHOT.jar_
+
+### JavaDoc
+
+JavaDoc generoidaan komennolla
+
+```
+mvn javadoc:javadoc
+```
+
+JavaDocia voi tarkastella avaamalla selaimella tiedosto _target/site/apidocs/index.html_
 
 ### Checkstyle
 

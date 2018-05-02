@@ -7,5 +7,7 @@ Päivä | Aika | Mitä tein
 10.4 | 3h | Funktioita, operaatioita lisätty
 17.4| 5h | Testit, checkstyle, arkkitehtuuri
 23.4 | 4h | Secondnappi + sndfunktioit, operaatiot toimimaan
-24.3 | 3h | Testejä, release, sekvenssikaavio
-yht | 20h
+24.4 | 3h | Testejä, release, sekvenssikaavio
+29.4 | 4h | Rakenne järkevämmäksi
+2.5 | 3h | Testejä, dokumentointia
+yht | 27h
