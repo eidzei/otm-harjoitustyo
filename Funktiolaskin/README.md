@@ -11,6 +11,8 @@ laskutoimituksia. Sovellus on työpöytäsovellus, jota käytetään valitsemall
 
 [Työaikakirjanpito](https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/dokumentointi/tyoaikakirjanpito.md)
 
+[Käyttöohje](https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/dokumentointi/kayttoohje.md)
+
 ## Releaset
 
 [Viikko 5](https://github.com/eidzei/otm-harjoitustyo/releases/tag/viiko5)
