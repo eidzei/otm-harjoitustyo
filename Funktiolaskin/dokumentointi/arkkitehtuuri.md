@@ -12,6 +12,12 @@ Pakkaus _funktiolaskin.ui_ sisältää JavaFX:llä toteutetun käyttöliittymän
 
 ## Käyttöliittymä
 
+Käyttöliittymä näkymiä on kaksi
+-normaalit funktiot
+-second napin takaa löytyvät funktiot
+
+Käyttöliittymä on toteutettu [Scene](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/Scene.html)-oliona. Näkymät on sijoitettu [stageen](https://docs.oracle.com/javase/8/javafx/api/javafx/stage/Stage.html). Näkymän pystyy vaihtamaan painamalla secondnappia. Käyttöliittymä on rakennettu ohjelmallisesti luokassa [funktiolaskin.ui.Interface](https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/src/main/java/funktiolaskin/ui/Interface.java).
+
 ## Päätoiminnallisuudet
 
 Kuvataan seuraavaksi sovelluksen toimintalogiikka muutaman päätoiminnallisuuden osalta sekvenssikaaviona.
