@@ -14,7 +14,10 @@ java -jar funktiolaskin.jar
 Operaatioita lasketaan valitsemalla ensin ensimmäinen luku hiirellä, haluttu operaatio, seuraava luku ja lopuksi on yhtä kuin nappia
 
 ## Funktioiden laskeminen 
+Funktioit lasketaan valitsemalla ensin haluttu luku ja seuraavaksi haluttu funktio
 
 ## Second nappi
+Valitsemalla second napin saa esiin lisää funktioita
 
 ## Muuttuja x
+Kun second valittu voi muuttujaan x tallentaa arvon
