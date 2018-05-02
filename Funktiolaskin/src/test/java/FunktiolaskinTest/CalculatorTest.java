@@ -9,9 +9,10 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import funktiolaskin.laskin.*;
 import funktiolaskin.ui.*;
+import javafx.stage.Stage;
 
 
-public class FunktiolaskinTest {
+public class CalculatorTest {
     
     Calculator laskin;
     
@@ -19,6 +20,7 @@ public class FunktiolaskinTest {
     @Before
     public void setUp() {
         laskin = new Calculator();
+        
         
     }
     
