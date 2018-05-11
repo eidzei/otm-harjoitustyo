@@ -10,4 +10,5 @@ Päivä | Aika | Mitä tein
 24.4 | 3h | Testejä, release, sekvenssikaavio
 29.4 | 4h | Rakenne järkevämmäksi
 2.5 | 3h | Testejä, dokumentointia
-yht | 27h
+11.5 | 9h | Dokumentointia, testausten viimeistely
+yht | 36h
