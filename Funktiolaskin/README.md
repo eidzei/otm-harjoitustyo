@@ -13,6 +13,8 @@ laskutoimituksia. Sovellus on työpöytäsovellus, jota käytetään valitsemall
 
 [Käyttöohje](https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/dokumentointi/kayttoohje.md)
 
+[Testausdokumentti](https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/dokumentointi/Testausdokumentti.md)
+
 ## Releaset
 
 [Viikko 5](https://github.com/eidzei/otm-harjoitustyo/releases/tag/viiko5)
