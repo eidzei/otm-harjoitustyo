@@ -38,7 +38,7 @@ Kun valitaan ensin luvuksi 2, valitaan oparaatioksi +, valitaan seuraavaksi luvu
 
 <img src="https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/dokumentointi/kuvat/kaksplusyks.png" width="550">
 
-Kun käyttäjä painaa on yhtä kuin nappia, 
+Käyttäjä valitsee luvut ja operaatiot kutsumalla [NumeroNapit] luokan metodeja numbers[2], numbers[5]
 
 ### Näyttökuvan ottaminen
 
