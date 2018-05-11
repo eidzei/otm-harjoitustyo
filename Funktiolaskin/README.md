@@ -19,6 +19,8 @@ laskutoimituksia. Sovellus on työpöytäsovellus, jota käytetään valitsemall
 
 [Viikko 5](https://github.com/eidzei/otm-harjoitustyo/releases/tag/viiko5)
 
+[Lopullupalautus](https://github.com/eidzei/otm-harjoitustyo/releases/tag/Lopullinen)
+
 ## Komentorivitoiminnot
 
 ### Testaus
