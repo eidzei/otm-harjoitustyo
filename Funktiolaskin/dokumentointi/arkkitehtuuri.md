@@ -38,7 +38,7 @@ Kun valitaan ensin luvuksi 2, valitaan oparaatioksi +, valitaan seuraavaksi luvu
 
 <img src="https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/dokumentointi/kuvat/kaksplusyks.png" width="550">
 
-Käyttäjä valitsee luvut ja operaatiot kutsumalla [NumberButtons](https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/src/main/java/funktiolaskin/ui/NumberButtons.java) luokan metodeia numbers[2], nappi(+), numbers[1] ja equals(), jotka asettavat [Display](https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/src/main/java/funktiolaskin/ui/Display.java) luokan TextFieldit settereillä setSecondary() ja setMain(). equals() kutsuu [Calculator](https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/src/main/java/funktiolaskin/laskin/Calculator.java) metodia calculateOparation() Display luokan getMain(), getSecondary() ja Operatoins.ADD parametreilla. 
+Käyttäjä valitsee luvut ja operaatiot kutsumalla [NumberButtons](https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/src/main/java/funktiolaskin/ui/NumberButtons.java) luokan metodeia numbers[2], nappi(+), numbers[1] ja equals(), jotka asettavat [Display](https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/src/main/java/funktiolaskin/ui/Display.java) luokan TextFieldit settereillä setSecondary() ja setMain(). equals() kutsuu [Calculator](https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/src/main/java/funktiolaskin/laskin/Calculator.java) metodia calculateOparation() Display luokan getMain(), getSecondary() ja Operatoins.ADD parametreilla. Calculator kutsuu Operations.ADD enumeraatiota ja laskee operaation ja palauttaa tuloksen.
 
 ### Näyttökuvan ottaminen
 
