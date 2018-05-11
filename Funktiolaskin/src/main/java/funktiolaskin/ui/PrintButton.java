@@ -11,11 +11,20 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.util.Duration;
 
-
+/**
+ * Luokka luo napin näyttökuvan tulostusta varten
+ * @author eidzey
+ */
 public class PrintButton {
     
     private static File file;
     
+    /**
+     * Luo napin ja toiminnalisuudet
+     * 
+     * @see funktiolaskin.snapshot.Snapshot.java
+     * @return printButton olio
+     */
     public static Button printButton() {
         
         

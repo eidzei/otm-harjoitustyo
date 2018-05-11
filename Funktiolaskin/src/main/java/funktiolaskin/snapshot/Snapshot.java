@@ -11,8 +11,17 @@ import javafx.scene.Scene;
 import javafx.scene.image.WritableImage;
 import javax.imageio.ImageIO;
 
-
+/**
+ * Luokka tarjoaa toiminnalisuuden näyttökuvan ottamiseen
+ * @author eidzey
+ */
 public class Snapshot {
+    
+    /**
+     * Ottaa kuvan Scenestä ja tallentaa tiedostoon
+     * @param scene
+     * @return 
+     */
     public static boolean takeSnapShot(Scene scene) {
         WritableImage writableImage = 
                 new WritableImage((int)scene.getWidth(), (int)scene.getHeight());
