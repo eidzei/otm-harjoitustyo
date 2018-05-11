@@ -19,6 +19,9 @@ Käyttöliittymä näkymiä on yksi, jossa kaksi eri sisältöä
 
 Käyttöliittymä on toteutettu [Scene](https://docs.oracle.com/javase/8/javafx/api/javafx/scene/Scene.html)-oliona. Näkymät on sijoitettu [stageen](https://docs.oracle.com/javase/8/javafx/api/javafx/stage/Stage.html). Näkymän sisältöä pystyy vaihtamaan painamalla secondnappia. Käyttöliittymä on rakennettu ohjelmallisesti luokassa [funktiolaskin.ui.Interface](https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/src/main/java/funktiolaskin/ui/Interface.java).
 
+## Tiedostot
+*Print a snapshot* nappi tallentaa näyttökuvan png muodossa nimella *funktiolaskin_snapshot.png* *Funktiolaskin-1.0-SNAPSHOT.jar* tiedoston omaavaan kansioon.
+
 ## Päätoiminnallisuudet
 
 Kuvataan seuraavaksi sovelluksen toimintalogiikka muutaman päätoiminnallisuuden osalta sekvenssikaaviona.
