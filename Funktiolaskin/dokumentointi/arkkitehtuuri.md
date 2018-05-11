@@ -7,9 +7,15 @@ Ohjelman rakenne noudattaa kaksitasoista kerrosarkitehtuuria, ohjelman pakkausra
 
 Pakkaus _funktiolaskin.ui_ sisältää JavaFX:llä toteutetun käyttöliittymän ja _funktiolaskin.laskin_ sisältää sovelluslogiikan.
 ## Sovelluslogiikka
-Sovelluksen loogisen datamallin muodostavat luokka [Calculator], sekä enumeraatiot [Operations] [Functions] [SecondFunctions]
+Sovelluksen loogisen datamallin muodostavat luokka [Calculator](https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/src/main/java/funktiolaskin/laskin/Calculator.java), sekä enumeraatiot [Operations](https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/src/main/java/funktiolaskin/laskin/Operations.java) [Functions](https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/src/main/java/funktiolaskin/laskin/Functions.java) [SecondFunctions](https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/src/main/java/funktiolaskin/laskin/SecondFunctions.java)
 
 <img src="https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/dokumentointi/kuvat/sovelluslogiikka.png" width="450">
+
+Calculator saa ui:lta tiedon valituista operaatiosta, funktioista, sekä secondfunktioista. Lisäksi käytäjän valitseman luvut saadaan TextField olioina, jotka Calculator muuttaa String merkkijonoiksi ja poistaa ylimääräiset desismaalia seuraavat nollat. Lopuksi Calculator suorittaaa käyttäjän valiseman toiminnon ja päivittää näytön tekstikentän.
+
+Ohjelman rakennetta kuvaava luokka/pakkauskaavio:
+
+<img src="https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/dokumentointi/kuvat/luokkapakkaus.png" width="450">
 
 ## Käyttöliittymä
 
@@ -36,9 +42,11 @@ Kun valitaan ensin luvuksi 2, valitaan oparaatioksi +, valitaan seuraavaksi luvu
 
 Kun käyttäjä painaa *Print a snapshot* nappia, etenee sovelluslogiikka seuraavasti:
 
+<img src="https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/dokumentointi/kuvat/printscreen.png" width="450">
+
 ### Muut toiminnallisuudet
 Funktioiden ja secondfunktioiden laskeminen on hyvin samankaltainen toiminnallisuus kuin operaatioden laskeminen. Käyttäjä valitsee luvun ja halutun funktion ja laskimen logiikka hoitaa laskun. Lisäksi käyttäjän on mahdollista tallentaa muuttuujaan x haluamiaan arvoja.
 
 ## Ohjelman rakenteeseen jääneet heikkoudet
 
-
+Ohjelma ei osaa pyöristää toisinaan liukuluvuissa esiintyviä pyöristysvirheitä, esim. 0.9999999999...-> 1 oikein. Lisäksi ylemmässä tekstikentässä voisi näkyä useampi laskutoimitus/historia.
