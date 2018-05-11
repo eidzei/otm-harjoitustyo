@@ -37,66 +37,32 @@ public class Display extends VBox {
 
     }
 
-    /**
-     * Metodi palauttaa näyton VBoxin
-     * 
-     * @return palauttaa näytön VBoxin
-     */
     public static VBox getDisplay() {
         return display;
     }
-    
-    /**
-     * Palauttaa ylemmän teksitikentän, 
-     * jossa näkyy edellinen luku ja operaattori
-     * 
-     * @return näytön ylempi tekstikenttä
-     */
+ 
     public static TextField getSecondary() {
         return secondary;
     }
     
-    /**
-     * Palauttaa alemman tekstikentän, jossa aktiivinen luku
-     * 
-     * @return näytön alempi tekstikenttä 
-     */
+
     public static TextField getMain() {
         return main;
     }
-    /**
-     * Metodi kertoo, onko tulos näytetty 
-     * 
-     * @return tulos näytetty 
-     */
+
     public static boolean getDisplayed() {
         return resultDisplayed;
     }
-    
-    /**
-     * Metodi asettaa alemman tekstikentän tekstiksi annetun syötteen 
-     *
-     * @param   value   asetettava teksti
-     * 
-     */
+
     public static void setMain(String value) {
         main.setText(value);
     }
-    
-    /**
-     * Metodi asettaa ylemmän tekstikentän tekstiksi annetun syötteen
-     *
-     * @param value asetettava teksti
-     */
+
     public static void setSecondary(String value) {
         secondary.setText(value);
     }
     
-    /**
-     * Metodi muuttaa tietoa, onko tulos näytetty
-     * 
-     * @param boo tulos näytetty
-     */
+
     public static void setResultDisplayed(boolean boo) {
         resultDisplayed = boo;
     }

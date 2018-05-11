@@ -53,11 +53,7 @@ public class SecondaryFunctionButtons {
         
     }
     
-    /**
-     * Metodi palauttaa second funktionappien GridPanen
-     * 
-     * @return second funktionapit
-     */
+  
     public static GridPane getFunctions() {
         return secondaryFunctionLayout;
     }

@@ -59,15 +59,15 @@ public class NumberButtons {
     
     //clear
     private Button clear() {
-        Button clr = new Button("clear");
-        clr.setMinSize(105, 50);
-        clr.setOnAction(e -> {
+        Button button = new Button("clear");
+        button.setMinSize(105, 50);
+        button.setOnAction(e -> {
             Display.getMain().clear();
             Display.getSecondary().clear();
             chosenOperator = false;
         });
         
-        return clr;
+        return button;
     }
     
     //takaisin
@@ -189,39 +189,21 @@ public class NumberButtons {
         return solve;
     }
     
-    /**
-     * Metodi kertoo valitun operaation
-     * 
-     * @return operaatio
-     */
+ 
     public static Operators getOperatorNow() {
         return operatorNow;
     }
     
-    /**
-     * Metodi kertoo onko operaatio valittu
-     * 
-     * @return operaatio valittu
-     */
     public static boolean getChosenOperator() {
         return chosenOperator;
     }
     
-    /**
-     * Metodi palauttaa numeronappien GridPanen
-     * 
-     * @return numeronapit
-     */
+
     public static GridPane getNumberButtons() {
         return buttonLayout;
     }
     
-    /**
-     * Metodi muuttaa tietoa, onko operaatio valittu
-     * 
-     * @param value syötetty totuusarvo 
-     */
-    public static void setChosenOperator(boolean value) {
+static void setChosenOperator(boolean value) {
         chosenOperator = value;
     }
 
