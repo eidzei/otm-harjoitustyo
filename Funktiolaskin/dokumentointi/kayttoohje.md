@@ -25,5 +25,8 @@ Kun second valittu käyttäjä voi tallentaa haluamansa arvon muuttujaan *x*. No
 ## Muut napit
 Funktiolaskimesta löytyy valmiina mm. *pi*-, neperin luku-, sekä rand nappi, joka antaa satunnaisluvun väliltä 0-1.
 
+## Clear ja backspace napit
+Clear nappi tyhjentää näytön ja backspace poistaa viimeisen numeron.
+
 ## Print a snapshot nappi
 Nappi tulostaa näyttökuvan ohjelmasta. Näyttökuva löytyy samasta kansioista kuin funktiolaskimen .jar tiedosto. Nappi muuttuu vihreäksi ja siinä lukee *Snapshot otettu* jos kuvan ottaminen onnistui. Vastaavasti nappi muuttuu punaiseksi ja siinä lukee *Snapshot epäonnistui* jos kuvaa ei saatu otettua.  
