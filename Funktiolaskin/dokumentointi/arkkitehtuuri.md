@@ -36,13 +36,17 @@ Kuvataan seuraavaksi sovelluksen toimintalogiikka muutaman päätoiminnallisuude
 
 Kun valitaan ensin luvuksi 2, valitaan oparaatioksi +, valitaan seuraavaksi luvuksi 1, painetaan on yhtä kuin nappia, etenee sovelluslogiikka seuraavasti:
 
-<img src="https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/dokumentointi/kuvat/kaksplusyks.png" width="450">
+<img src="https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/dokumentointi/kuvat/kaksplusyks.png" width="550">
+
+Kun käyttäjä painaa on yhtä kuin nappia, 
 
 ### Näyttökuvan ottaminen
 
 Kun käyttäjä painaa *Print a snapshot* nappia, etenee sovelluslogiikka seuraavasti:
 
-<img src="https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/dokumentointi/kuvat/printscreen.png" width="450">
+<img src="https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/dokumentointi/kuvat/printscreen.png" width="550">
+
+[Printbutton](https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/src/main/java/funktiolaskin/ui/PrintButton.java) kutsuu [Snapshot](https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/src/main/java/funktiolaskin/snapshot/Snapshot.java) luokan metodia takeSnapShot antaen parametriksi [Interface](https://github.com/eidzei/otm-harjoitustyo/blob/master/Funktiolaskin/src/main/java/funktiolaskin/ui/Interface.java) luokan getterin getScene(). Snapshot kutsuu getScenellä scene, ja suorittaa metodin scene.snapsht(). Seuraavaksi Snapshot kokeilee, onnistuuko metodi ImageIO.write ja onnistuessa tallentaa tiedoston ja palauttaa true. PrintButton näyttää käyttäjälle "Snapshot otettu".
 
 ### Muut toiminnallisuudet
 Funktioiden ja secondfunktioiden laskeminen on hyvin samankaltainen toiminnallisuus kuin operaatioden laskeminen. Käyttäjä valitsee luvun ja halutun funktion ja laskimen logiikka hoitaa laskun. Lisäksi käyttäjän on mahdollista tallentaa muuttuujaan x haluamiaan arvoja.
