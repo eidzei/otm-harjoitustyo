@@ -21,7 +21,7 @@ public class FunctionButtons {
      */
     public FunctionButtons() {
         functionLayout = new GridPane();
-        functionLayout.setPadding(new Insets(10, 10, 0, 0));
+        functionLayout.setPadding(new Insets(10, 10, 5, 0));
         functionLayout.setHgap(5);
         functionLayout.setVgap(5);
         

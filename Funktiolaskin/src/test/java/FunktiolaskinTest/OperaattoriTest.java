@@ -25,7 +25,8 @@ public class OperaattoriTest {
         assertEquals(raattori.MULTIPLY.toString(), "*");
     }
     
-    @Test void lisaaNimi(){
+    @Test 
+    public void lisaaNimi(){
         assertEquals(raattori.ADD.toString(), "+");
     }
     

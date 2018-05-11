@@ -23,7 +23,7 @@ public class SecondaryFunctionButtons {
      */
     public SecondaryFunctionButtons() {
         secondaryFunctionLayout = new GridPane();
-        secondaryFunctionLayout.setPadding(new Insets(10, 10, 0, 0));
+        secondaryFunctionLayout.setPadding(new Insets(10, 10, 5, 0));
         secondaryFunctionLayout.setHgap(5);
         secondaryFunctionLayout.setVgap(5);
         

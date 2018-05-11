@@ -5,6 +5,8 @@
     "http://www.puppycrawl.com/dtds/suppressions_1_1.dtd">
 
 <suppressions>
-    <suppress files="funktiolaskin.ui.GuiMain" checks="[a-zA-Z0-9]*"/>
+    <suppress files="funktiolaskin.ui.Interface.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="funktiolaskin.ui.NumberButtons.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="funktiolaskin.ui.PrintButton.java" checks="[a-zA-Z0-9]*"/>
     
 </suppressions>

@@ -30,7 +30,7 @@ public class NumberButtons {
      */
     public NumberButtons() {
         buttonLayout = new GridPane();
-        buttonLayout.setPadding(new Insets(10, 0, 0, 0));
+        buttonLayout.setPadding(new Insets(10, 0, 5, 0));
         buttonLayout.setHgap(5);
         buttonLayout.setVgap(5);
         

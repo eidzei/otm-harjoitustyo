@@ -6,6 +6,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import funktiolaskin.laskin.*;
 import javafx.geometry.Pos;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 
 /**
@@ -19,12 +20,15 @@ public class Interface {
     
     private static Calculator calc;
     
+    private static Display display;
+    
     private static GridPane second;
     
     private static GridPane functions;
     
+    private static Scene scene;
     
-    
+
     /**
      * Metodi sommittelee graafisen käyttöliittymän
      * 
@@ -32,11 +36,12 @@ public class Interface {
      */
     public static Stage getInterface() {
         //luodaan ja sommiotellaan asettelu
+        
         Stage stage = new Stage();
         calc = new Calculator();
         window = new BorderPane();
         
-        Display display = new Display();
+        display = new Display();
         OtherButtons otherButtons = new OtherButtons();
         FunctionButtons functionButtons = new FunctionButtons();
         functions = functionButtons.getFunctions();
@@ -51,10 +56,12 @@ public class Interface {
         window.setCenter(functions);
         window.setAlignment(functions, Pos.CENTER);
         window.setRight(numberButtons.getNumberButtons());
+        
+        window.setBottom(PrintButton.printButton());
 
         
 
-        Scene scene = new Scene(window);
+        scene = new Scene(window);
         stage.setScene(scene);
         stage.setResizable(false);
         stage.sizeToScene();
@@ -97,4 +104,16 @@ public class Interface {
         return functions;
     }
 
+    public static Scene getScene() {
+        return scene;
+    }
+    
+    
+    public static TextField getSecondary() {
+        return display.getSecondary();
+    }
+    
+    public static TextField getMain() {
+        return display.getMain();
+    }
 }

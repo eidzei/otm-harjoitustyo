@@ -60,6 +60,8 @@
                 <configuration>
                     <excludes>
                         <exclude>funktiolaskin/ui/*</exclude>
+                        <exclude>funktiolaskin/snapshot/*</exclude>
+                        <exclude>funktiolaskin/main/*</exclude>
                     </excludes>
                 </configuration>  
                 <executions>
@@ -84,7 +86,7 @@
                         <configuration>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>funktiolaskin.ui.GuiMain</mainClass>
+                                    <mainClass>funktiolaskin.main.Main</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>

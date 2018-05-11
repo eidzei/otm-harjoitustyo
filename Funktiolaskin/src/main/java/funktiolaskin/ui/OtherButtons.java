@@ -28,7 +28,7 @@ public class OtherButtons {
      */
     public OtherButtons() {
         othorsLayout  = new GridPane();
-        othorsLayout.setPadding(new Insets(10, 10, 0, 0));
+        othorsLayout.setPadding(new Insets(10, 10, 5, 0));
         othorsLayout.setHgap(5);
         othorsLayout.setVgap(5);
         
@@ -158,34 +158,7 @@ public class OtherButtons {
         
         return x;
     }
-    
-    private Button mc() {
-        Button mc = new Button("mc");
-        mc.setMinSize(50, 50);
-        mc.setStyle("-fx-color: gray");
-        return mc;
-    }
-    
-    private Button mPlus() {
-        Button mPlus = new Button("m+");
-        mPlus.setMinSize(50, 50);
-        mPlus.setStyle("-fx-color: gray");
-        return mPlus;
-    }
-    
-    private Button mMinus() {
-        Button mMinus = new Button("m-");
-        mMinus.setMinSize(50, 50);
-        mMinus.setStyle("-fx-color: gray");
-        return mMinus;
-    }
-    
-    private static Button mr() {
-        Button mr = new Button("mr");
-        mr.setMinSize(50, 50);
-        mr.setStyle("-fx-color: gray");
-        return mr;
-    }
+  
     
     /**
      * Palauttaa muiden näppäinten GridPanen
